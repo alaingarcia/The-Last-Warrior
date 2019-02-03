@@ -10,6 +10,7 @@ namespace UnityStandardAssets._2D
         public float slowRange;
         public LayerMask slowLayer;
 
+        // The enemy and player can be slowed by different multipliers
         public float playerSlowdownMultiplier;
         public float enemySlowdownMultiplier;
 
@@ -23,18 +24,22 @@ namespace UnityStandardAssets._2D
             // When Slow Key (default Left Shift) is pressed down
             if (Input.GetKeyDown(slowKey))
             {
+                // Slow yourself if applicable
+                gameObject.GetComponent<PlatformerCharacter2D>().setSpeedMultiplier(playerSlowdownMultiplier);
+
+                // Zoom camera in
+                camera.GetComponent<CompleteCameraController>().zoom();
+            }
+
+            // While the key is pressed, keep checking for enemies that need to be slowed
+            if (Input.GetKey(slowKey))
+            {
                 // Get all enemies to be slowed, then slow them
                 Collider2D[] objectsSlowed = Physics2D.OverlapCircleAll(slowPos.position, slowRange, slowLayer);
                 for (int i = 0; i < objectsSlowed.Length; i++)
                 {
                     objectsSlowed[i].GetComponent<AIAggression>().setSpeedMultiplier(enemySlowdownMultiplier);
                 }
-
-                // Slow yourself if applicable
-                gameObject.GetComponent<PlatformerCharacter2D>().setSpeedMultiplier(playerSlowdownMultiplier);
-
-                // Zoom camera in
-                camera.GetComponent<CompleteCameraController>().zoom();
             }
 
             // When Slow Key is let up
