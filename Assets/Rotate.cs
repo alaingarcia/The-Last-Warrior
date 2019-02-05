@@ -33,22 +33,22 @@ public class Rotate : MonoBehaviour
     public void rotate180()
     {
         rotateVector = new Vector3(transform.position.x, -1 * transform.position.y, transform.position.z);
-        gameObject.GetComponent<FauxGravityBody>().gravity = false;
+        //gameObject.GetComponent<FauxGravityBody>().gravity = false;
         transform.position = rotateVector;
 
         if (!rotated180)
         {
             Debug.Log("Initial Rotation");
             rotated180 = true;
-            transform.up = new Vector3(-1 * transform.position.x, 0f, -1 * transform.position.z);
+            transform.eulerAngles = new Vector3(180f, 0f, 0f);
         }
 
         else if (rotated180)
         {
             Debug.Log("Rotating Back");
             rotated180 = false;
-            transform.up = new Vector3(0f, 0f, 0f);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
-        gameObject.GetComponent<FauxGravityBody>().gravity = true;
+        //gameObject.GetComponent<FauxGravityBody>().gravity = true;
     }
 }

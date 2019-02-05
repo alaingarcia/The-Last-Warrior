@@ -77,7 +77,7 @@ public class PlatformerCharacter3D : MonoBehaviour
     */
 
 
-    public void Move(float move_x, float move_y_or_z, bool jump)
+    public void Move(float move_x, float move_z, bool jump)
     {
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl)
@@ -89,22 +89,9 @@ public class PlatformerCharacter3D : MonoBehaviour
             float x_component = speedMultiplier * move_x * m_MaxSpeed;
             Vector3 direction;
 
-            if (transform.rotation.x == 0f)
-            {
-                direction = new Vector3(x_component, m_Rigidbody.velocity.y, speedMultiplier * move_y_or_z * m_MaxSpeed);
-                m_Rigidbody.MovePosition(m_Rigidbody.position + (direction.normalized)/5);
-            }
-            if (transform.rotation.x == 180f)
-            {
-                direction = new Vector3(-1 * x_component, m_Rigidbody.velocity.y, speedMultiplier * move_y_or_z * m_MaxSpeed);
-                m_Rigidbody.MovePosition(m_Rigidbody.position + (direction.normalized) / 5);
-            }
-            else if (transform.rotation.x == 90f || transform.rotation.x == 270f)
-            {
-                direction = new Vector3(x_component, speedMultiplier * move_y_or_z * m_MaxSpeed, m_Rigidbody.velocity.z);
-                m_Rigidbody.MovePosition(m_Rigidbody.position + (direction.normalized)/5);
-            }
-
+            direction = new Vector3(x_component, m_Rigidbody.velocity.y, speedMultiplier * move_z * m_MaxSpeed);
+            m_Rigidbody.MovePosition(m_Rigidbody.position + (direction.normalized)/5);
+            
             // If the input is moving the player right and the player is facing left...
             if (move_x > 0 && !m_FacingRight)
             {
