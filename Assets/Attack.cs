@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace UnityStandardAssets._2D
 {
-    [RequireComponent(typeof(PlatformerCharacter2D))]
     public class Attack : MonoBehaviour
     {
         public float attackCooldown;
