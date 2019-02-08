@@ -4,7 +4,6 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
-[Pp]ackages/
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
@@ -50,4 +49,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-Library/shadercompiler-UnityShaderCompiler.exe0.log
