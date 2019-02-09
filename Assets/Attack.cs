@@ -2,50 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class Attack : MonoBehaviour
+public class Attack : MonoBehaviour
+{
+    public float attackCooldown;
+    private float timeLeft;
+
+    public Transform attackPos;
+
+    public float attackRange;
+    public int damage;
+
+    public KeyCode attackKey = KeyCode.Mouse0;
+
+    void Start()
     {
-        public float attackCooldown;
-        private float timeLeft;
+        // Set the radius sphere collider (which checks for collisions with enemies to determine whether there is a hit or not) 
+        gameObject.GetComponent<SphereCollider>().radius = attackRange;
+    }
 
-        public Transform attackPos;
-
-        public float attackRange;
-        public int damage;
-
-        public KeyCode attackKey = KeyCode.Mouse0;
-
-        void Start()
+    void OnCollisionStay(Collision collision)
+    {
+        if (timeLeft <= 0)
         {
-           
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (timeLeft <= 0)
+            // If key is pressed and the thing collided with is in the enemy layer, destroy it
+            if (Input.GetKeyDown(attackKey) && (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")))
             {
-                if (Input.GetKey(attackKey))
-                {
-                    void OnCollisionEnter(Collision collision)
-                    {/*
-                        if (collision.GetComponent<Collider>().name == "Enemy")
-                        {
-                            Destroy(collider.gameObject);
-                        }*/
-                    }
-                }
-                timeLeft = attackCooldown;
+                Destroy(collision.gameObject);
             }
-
-            else
-            {
-                timeLeft = timeLeft - Time.deltaTime;
-            }
+            timeLeft = attackCooldown;
         }
-
-        void OnDrawGizmosSelected()
+        else
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPos.position, attackRange);
+            timeLeft = timeLeft - Time.deltaTime;
         }
     }
+
+    // Gives the red wireframe thing
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+}
