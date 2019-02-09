@@ -93,9 +93,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 292
-        width: 328
-        height: 410
+        y: 9
+        width: 319
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -103,7 +103,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2a6383fe0498bb4581728ebff59ab34
+      spriteID: d1c18778e314db74eb69736e734833a3
       vertices: []
       indices: 
       edges: []
@@ -112,10 +112,10 @@ TextureImporter:
       name: Last-Warrior-Enemy-RUN_1
       rect:
         serializedVersion: 2
-        x: 388
-        y: 292
-        width: 329
-        height: 417
+        x: 377
+        y: 9
+        width: 320
+        height: 407
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,7 +123,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1c735ca6553bb4abc566c6e508b7b4
+      spriteID: bf61fb7fed53e154cb41c8a4647c3ead
       vertices: []
       indices: 
       edges: []
@@ -132,10 +132,10 @@ TextureImporter:
       name: Last-Warrior-Enemy-RUN_2
       rect:
         serializedVersion: 2
-        x: 804
-        y: 292
-        width: 327
-        height: 382
+        x: 781
+        y: 9
+        width: 319
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,7 +143,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a53e05927bf9e84886d4ec8e35d3699
+      spriteID: 4671c5b5afcf9374c85c947d7a3b1326
       vertices: []
       indices: 
       edges: []
@@ -152,10 +152,10 @@ TextureImporter:
       name: Last-Warrior-Enemy-RUN_3
       rect:
         serializedVersion: 2
-        x: 1239
-        y: 301
-        width: 327
-        height: 404
+        x: 1204
+        y: 18
+        width: 319
+        height: 394
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eede08430fcbc6a468105549029f7c73
+      spriteID: f8567d3ebf6bab349af48ebceb9a3510
       vertices: []
       indices: 
       edges: []
@@ -172,10 +172,10 @@ TextureImporter:
       name: Last-Warrior-Enemy-RUN_4
       rect:
         serializedVersion: 2
-        x: 1672
-        y: 299
-        width: 328
-        height: 410
+        x: 1626
+        y: 17
+        width: 319
+        height: 399
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,7 +183,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4dbe1fd52947bf45aec9b138335407e
+      spriteID: ac1480fa0f4d75e47b753ecab2d06289
       vertices: []
       indices: 
       edges: []

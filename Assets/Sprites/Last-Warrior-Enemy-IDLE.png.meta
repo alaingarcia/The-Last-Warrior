@@ -89,10 +89,10 @@ TextureImporter:
       name: Last-Warrior-Enemy-IDLE_0
       rect:
         serializedVersion: 2
-        x: 312
-        y: 46
-        width: 674
-        height: 869
+        x: 141
+        y: 7
+        width: 307
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3643512036c9f594d8fb8f25659848a3
+      spriteID: 83fde278060fa734492898fd034a76c1
       vertices: []
       indices: 
       edges: []
@@ -109,10 +109,10 @@ TextureImporter:
       name: Last-Warrior-Enemy-IDLE_1
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 44
-        width: 673
-        height: 906
+        x: 471
+        y: 7
+        width: 306
+        height: 411
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c23eaa09558c5c2489686b832b8bbad2
+      spriteID: 648050ec97f0dc14e8c2150fd6433609
       vertices: []
       indices: 
       edges: []

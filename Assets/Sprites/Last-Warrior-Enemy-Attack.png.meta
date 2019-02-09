@@ -89,18 +89,18 @@ TextureImporter:
       name: Last-Warrior-Enemy-Attack_0
       rect:
         serializedVersion: 2
-        x: 267
-        y: 18
-        width: 714
-        height: 958
+        x: 112
+        y: 7
+        width: 298
+        height: 404
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: becc8d0aaf1e33b44b1f8fd524fb9716
+      spriteID: 77617ca1270e0f048b8d5648b4c137f3
       vertices: []
       indices: 
       edges: []
@@ -109,18 +109,18 @@ TextureImporter:
       name: Last-Warrior-Enemy-Attack_1
       rect:
         serializedVersion: 2
-        x: 975
-        y: 16
-        width: 772
-        height: 956
+        x: 414
+        y: 7
+        width: 322
+        height: 402
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2e729b259235aa4dba6c3247cd8ed05
+      spriteID: 98cd35afee8867a45ad32eaf360a4173
       vertices: []
       indices: 
       edges: []
