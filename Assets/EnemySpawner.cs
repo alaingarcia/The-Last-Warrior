@@ -14,16 +14,16 @@ public class EnemySpawner : MonoBehaviour
     // Number of enemies to spawn, default is 5
     public int amountToSpawn = 5;
 
-    private int amountLeft;
-    private float nextSpawn = 0.0f;
+    private int amountLeft =5;
+    private float nextSpawn = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         // Sets spawn location to the currenct location of the spawner
         spawnLocation = new Vector2(transform.position.x, transform.position.y);
-
-        amountLeft = amountToSpawn;
+        print(amountToSpawn); // returns zero?
+        //amountLeft = amountToSpawn;
     }
 
     // Update is called once per frame

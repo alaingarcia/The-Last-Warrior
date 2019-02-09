@@ -25,7 +25,7 @@ namespace UnityStandardAssets._2D
             if (Input.GetKeyDown(slowKey))
             {
                 // Slow yourself if applicable
-                gameObject.GetComponent<PlatformerCharacter2D>().setSpeedMultiplier(playerSlowdownMultiplier);
+                gameObject.GetComponent<PlatformerCharacter3D>().setSpeedMultiplier(playerSlowdownMultiplier);
 
                 // Zoom camera in
                 camera.GetComponent<CompleteCameraController>().zoom();
@@ -53,7 +53,7 @@ namespace UnityStandardAssets._2D
                 }
 
                 // Revert your speed if applicable
-                gameObject.GetComponent<PlatformerCharacter2D>().setSpeedMultiplier(1);
+                gameObject.GetComponent<PlatformerCharacter3D>().setSpeedMultiplier(1);
 
                 // Zoom camera back out
                 camera.GetComponent<CompleteCameraController>().zoom();
