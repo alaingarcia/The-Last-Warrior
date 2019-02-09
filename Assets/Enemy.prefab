@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
-  m_JumpForce: 400
+  m_JumpForce: 0
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2

@@ -54,6 +54,7 @@ public class PlatformerCharacter3D : MonoBehaviour
         m_CeilingCheck = transform.Find("CeilingCheck");
         m_Anim = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        Physics.IgnoreLayerCollision(1, 9);
     }
 
     public void Die()
