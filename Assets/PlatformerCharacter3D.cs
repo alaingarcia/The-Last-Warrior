@@ -56,6 +56,17 @@ public class PlatformerCharacter3D : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
+    public void Die()
+    {
+        Destroy(gameObject.GetComponent<Collider>());
+        Invoke("Destroy", 2f);
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
     /*
     private void FixedUpdate()
     {
@@ -111,22 +122,6 @@ public class PlatformerCharacter3D : MonoBehaviour
             // Add a vertical force to the player.
             m_Grounded = false;
             m_Anim.SetBool("Ground", false);
-            if (transform.rotation.x == 0f)
-            {
-                m_Rigidbody.AddForce(new Vector3(0f, m_JumpForce, 0f));
-            }
-            else if (transform.rotation.x == 90f)
-            {
-                m_Rigidbody.AddForce(new Vector3(0f, 0f, m_JumpForce));
-            }
-            else if (transform.rotation.x == 180f)
-            {
-                m_Rigidbody.AddForce(new Vector3(0f, -1 * m_JumpForce, 0f));
-            }
-            else if (transform.rotation.x == 270f)
-            {
-                m_Rigidbody.AddForce(new Vector3(0f, 0f, -1 * m_JumpForce));
-            }
         }
     }
 

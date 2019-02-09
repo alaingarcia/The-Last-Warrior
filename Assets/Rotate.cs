@@ -8,18 +8,14 @@ public class Rotate : MonoBehaviour
     private GameObject player;
 
     private bool rotated0;
-    private bool rotated90;
     private bool rotated180;
-    private bool rotated270;
 
     void Start()
     {
         player = gameObject;
 
         rotated0 = true;
-        rotated90 = false;
         rotated180 = false;
-        rotated270 = false;
     }
 
     void Update()

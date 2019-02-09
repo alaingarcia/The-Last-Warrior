@@ -4,7 +4,36 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public float attackCooldown;
+    public Transform attackPos;
+    public float attackRange;
+    public LayerMask attackLayer;
+    public float attackCooldown = 10;
+    public KeyCode attackKey = KeyCode.Mouse0;
+
+    // Update is called once per frame
+    void Update()
+    {
+        // While the key is pressed, keep checking for enemies that need to be slowed
+        if (Input.GetKey(attackKey))
+        {
+            // Get all enemies to be slowed, then slow them
+            Collider[] objectsAttacked = Physics.OverlapSphere(attackPos.position, attackRange, attackLayer);
+            if (objectsAttacked.Length >= 1)
+            {
+                objectsAttacked[0].GetComponent<PlatformerCharacter3D>().Die();
+            }
+        }
+    }
+
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+}
+
+   /* public float attackCooldown;
     private float timeLeft;
 
     public Transform attackPos;
@@ -42,5 +71,4 @@ public class Attack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
-    }
-}
+    }*/

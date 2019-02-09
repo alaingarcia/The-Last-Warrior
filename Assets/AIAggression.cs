@@ -26,7 +26,8 @@ public class AIAggression : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        // Direction points towards player except in y direction, so they don't float up
+        direction = new Vector3(player.transform.position.x, 0f, player.transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, direction, speedMultiplier * speed * Time.deltaTime);
     }
 
