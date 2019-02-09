@@ -9,6 +9,8 @@ public class FauxGravityBody : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().useGravity = false;
+
+        attractor = GameObject.Find("Main Floor").GetComponent<FauxGravityAttractor>();
     }
     // Update is called once per frame
     void Update()

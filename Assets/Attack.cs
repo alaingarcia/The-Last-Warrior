@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityStandardAssets._2D
-{
     public class Attack : MonoBehaviour
     {
         public float attackCooldown;
         private float timeLeft;
 
         public Transform attackPos;
-        public LayerMask enemyLayer;
 
         public float attackRange;
         public int damage;
 
         public KeyCode attackKey = KeyCode.Mouse0;
+
+        void Start()
+        {
+           
+        }
 
         // Update is called once per frame
         void Update()
@@ -24,10 +26,12 @@ namespace UnityStandardAssets._2D
             {
                 if (Input.GetKey(attackKey))
                 {
-                    Collider2D[] enemiesDamaged = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
-                    for (int i = 0; i < enemiesDamaged.Length; i++)
-                    {
-                        enemiesDamaged[i].GetComponent<AIAggression>().takeDamage(damage);
+                    void OnCollisionEnter(Collision collision)
+                    {/*
+                        if (collision.GetComponent<Collider>().name == "Enemy")
+                        {
+                            Destroy(collider.gameObject);
+                        }*/
                     }
                 }
                 timeLeft = attackCooldown;
@@ -45,4 +49,3 @@ namespace UnityStandardAssets._2D
             Gizmos.DrawWireSphere(attackPos.position, attackRange);
         }
     }
-}
