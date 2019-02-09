@@ -101,7 +101,8 @@ public class PlatformerCharacter3D : MonoBehaviour
             Vector3 direction;
 
             direction = new Vector3(x_component, m_Rigidbody.velocity.y, speedMultiplier * move_z * m_MaxSpeed);
-            m_Rigidbody.MovePosition(m_Rigidbody.position + (direction.normalized)/5);
+            //m_Rigidbody.MovePosition(m_Rigidbody.position + (direction.normalized)/5);
+            m_Rigidbody.velocity = direction;
             
             // If the input is moving the player right and the player is facing left...
             if (move_x > 0 && !m_FacingRight)
@@ -119,7 +120,9 @@ public class PlatformerCharacter3D : MonoBehaviour
         // If the player should jump...
         if (m_Grounded && jump && m_Anim.GetBool("Ground"))
         {
+            Vector3 jumpVector = new Vector3(transform.position.x, transform.position.y * m_JumpForce, transform.position.z);
             // Add a vertical force to the player.
+            m_Rigidbody.AddForce(jumpVector);
             m_Grounded = false;
             m_Anim.SetBool("Ground", false);
         }

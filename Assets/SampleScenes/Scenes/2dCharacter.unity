@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4635884845375924216, guid: 619b39de5b206ba47b1400faeb95677e, type: 3}
   spawnRate: 3
-  amountToSpawn: 100
+  amountToSpawn: 0
 --- !u!4 &481077500
 Transform:
   m_ObjectHideFlags: 0
@@ -860,8 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf668c0b4257c3489b446b44af4347c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxSpeed: 10
-  m_JumpForce: 400
+  m_MaxSpeed: 15
+  m_JumpForce: 150
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -1532,13 +1532,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864572491}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 10, y: 20, z: -20}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 10, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1864572495
 MonoBehaviour:
   m_ObjectHideFlags: 0
