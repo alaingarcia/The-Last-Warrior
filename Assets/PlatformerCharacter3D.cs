@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlatformerCharacter3D : MonoBehaviour
 {
@@ -9,17 +10,21 @@ public class PlatformerCharacter3D : MonoBehaviour
     [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField] public LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
-    private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
-    private Transform m_CeilingCheck;   // A position marking where to check for ceilings
-    const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
     private Animator m_Anim;            // Reference to the player's animator component.
     private Rigidbody m_Rigidbody;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
     private float speedMultiplier = 1.0f;
     public float verticalSpeed = 0.25f;
+
+    public float Health = 100f;
+
+    public Image HealthBG;
+    public Image HealthBar;
+
+    private Color newColor;
+
 
     public void setSpeedMultiplier(float multiplier)
     {
@@ -33,7 +38,7 @@ public class PlatformerCharacter3D : MonoBehaviour
             m_Grounded = true;
             m_Anim.SetBool("Ground", m_Grounded);
         }
-     
+
         // Set the vertical animation
         m_Anim.SetFloat("vSpeed", m_Rigidbody.velocity.y);
     }
@@ -47,18 +52,59 @@ public class PlatformerCharacter3D : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Health < 100)
+        {
+            // Making the bars visible
+            newColor = HealthBG.color;
+            newColor.a = 0.24f;
+            HealthBG.color = newColor;
+
+            newColor = HealthBar.color;
+            newColor.a = 1f;
+            HealthBar.color = newColor;
+        }
+        
+        else
+        {
+            // Make bars invisible
+            newColor = HealthBG.color;
+            newColor.a = 0f;
+            HealthBG.color = newColor;
+
+            newColor = HealthBar.color;
+            newColor.a = 0f;
+            HealthBar.color = newColor;
+        }
+
+        HealthBar.fillAmount = Health / 100f;
+
+    }
+
     private void Awake()
     {
         // Setting up references.
-        m_GroundCheck = transform.Find("GroundCheck");
-        m_CeilingCheck = transform.Find("CeilingCheck");
         m_Anim = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+
+        // Ignoring certain collisions
         Physics.IgnoreLayerCollision(1, 9);
+
+        // Settings starting opacity
+        newColor = HealthBG.color;
+        newColor.a = 0f;
+        HealthBG.color = newColor;
+
+        newColor = HealthBar.color;
+        newColor.a = 0f;
+        HealthBar.color = newColor;
     }
 
     public void Die()
     {
+        HealthManagement hitDetector = GameObject.Find("Hit Detector").GetComponent<HealthManagement>();
+        hitDetector.enemyCount -= 1;
         Destroy(gameObject.GetComponent<Collider>());
         Invoke("Destroy", 2f);
     }
@@ -67,27 +113,6 @@ public class PlatformerCharacter3D : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    /*
-    private void FixedUpdate()
-    {
-        m_Grounded = false;
-
-        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject != gameObject)
-                m_Grounded = true;
-        }
-        m_Anim.SetBool("Ground", m_Grounded);
-
-        // Set the vertical animation
-        m_Anim.SetFloat("vSpeed", m_Rigidbody.velocity.y);
-    }
-    */
-
 
     public void Move(float move_x, float move_z, bool jump)
     {
