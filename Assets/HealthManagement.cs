@@ -14,6 +14,10 @@ public class HealthManagement : MonoBehaviour
     public float rateOfDamage = 2f;
     public float rateOfHealing = 1f;
 
+    // Force Game Over screen to display for at least this amount of ms.
+    public float forceGameOverTime = .75f;
+    public float gameOverTimeStart;
+
     private Color newColor;
 
     private Image BlackBG;
@@ -27,6 +31,7 @@ public class HealthManagement : MonoBehaviour
         // Set Game Over invisible
         changeAlpha(0f);
 
+        gameOverTimeStart = -1;
     }
 
     void Update()
@@ -44,7 +49,11 @@ public class HealthManagement : MonoBehaviour
             // Show Game Over
             changeAlpha(1f);
 
-            if (Input.anyKey)
+            // mark when we first started showing the Game Over screen.
+            if (gameOverTimeStart < 0)
+                gameOverTimeStart = Time.realtimeSinceStartup;
+
+            if (Input.anyKey && Time.realtimeSinceStartup >= gameOverTimeStart + forceGameOverTime)
             {
                 // Hide Game Over
                 changeAlpha(0f);
@@ -54,6 +63,9 @@ public class HealthManagement : MonoBehaviour
 
                 // Resume everything
                 Time.timeScale = 1f;
+
+                // reset game over timer
+                gameOverTimeStart = -1;
             }
         }
     }
