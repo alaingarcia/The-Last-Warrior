@@ -106,7 +106,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 935c542aee7ae9f47913605ecf659c1d
+      spriteID: 71724b0bfe6d0f54298d05ce18fa5b1f
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1563d1a165ef62645bca56791e84ed2a
+      spriteID: 10f63c606d3dbdc44b0d3b9a4fb5433f
       vertices: []
       indices: 
       edges: []
@@ -146,27 +146,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b5a115aadb28da47b0eea234776824c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Last-Warrior-Player-RUN_3
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 378
-        width: 26
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b749da3cd83a544fb3d76d35b6b8bc0
+      spriteID: 45ad2462c724c704492ed9d0bda0154e
       vertices: []
       indices: 
       edges: []
@@ -186,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b59f2388926ed7c4f82a0bbb19da21e7
+      spriteID: c46131b0f40c5ae47bd4a7bf5bbb7143
       vertices: []
       indices: 
       edges: []
@@ -206,7 +186,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a093875ad16f6de44b38c49102a1bc06
+      spriteID: dbe9e2691542d6b409cdc6b50e43230a
       vertices: []
       indices: 
       edges: []
@@ -226,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8a4b9e6fd07584b94ff55ba861ed08
+      spriteID: a2cbcf95783f895408fa146229dd4bad
       vertices: []
       indices: 
       edges: []
@@ -235,10 +215,10 @@ TextureImporter:
       name: Last-Warrior-Player-RUN_7
       rect:
         serializedVersion: 2
-        x: 882
+        x: 885
         y: 10
-        width: 240
-        height: 366
+        width: 237
+        height: 407
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,7 +226,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569687c1dc5a2e841a7ce1bb60868885
+      spriteID: 1de19f6ccdf285947aa0191cbe217aa9
       vertices: []
       indices: 
       edges: []

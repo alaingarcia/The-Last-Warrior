@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 920846916}
   - component: {fileID: 920846922}
   - component: {fileID: 920846924}
+  - component: {fileID: 920846925}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1046,9 +1047,26 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 512
-  attackCooldown: 0
+  attackCooldown: 0.25
   attackKey: 323
   scoreText: {fileID: 0}
+  animator: {fileID: 920846920}
+  attackTimer: 0
+  attacking: 0
+--- !u!114 &920846925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920846914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3037992f685385a4c9239659de9900ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 5
+  lowJumpMultiplier: 4
 --- !u!1 &1024762809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5bead9209a9de42885152997ad75ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -15
+  gravity: -33
 --- !u!218 &1024762815
 Terrain:
   m_ObjectHideFlags: 0
