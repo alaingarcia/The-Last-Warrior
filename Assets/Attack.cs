@@ -22,7 +22,7 @@ public class Attack : MonoBehaviour
     void Start()
     {
         score = 0;
-        scoreText = GameObject.Find("Canvas").GetComponent<Text>();
+        //scoreText = GameObject.Find("Canvas").GetComponent<Text>();
         scoreText.text = "Score: " + score.ToString();
 
         attacking = false;
