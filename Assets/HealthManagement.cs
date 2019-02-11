@@ -20,6 +20,9 @@ public class HealthManagement : MonoBehaviour
     private Text GameOver;
     private Text Press;
 
+    private float forceGameOverTime = .75f;
+    private float gameOverTimeStart;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlatformerCharacter3D>();
@@ -27,6 +30,8 @@ public class HealthManagement : MonoBehaviour
         // Set Game Over invisible
         changeAlpha(0f);
 
+        // Reset game over screen timer
+        gameOverTimeStart = -1;
     }
 
     void Update()
@@ -44,7 +49,12 @@ public class HealthManagement : MonoBehaviour
             // Show Game Over
             changeAlpha(1f);
 
-            if (Input.anyKey)
+            // mark the time when we first saw this game over screen
+            if (gameOverTimeStart < 0)
+                gameOverTimeStart = Time.realtimeSinceStartup;
+
+            // Hide the Game Over screen if we press a key and the force Game Over timer has expired
+            if (Input.anyKey && Time.realtimeSinceStartup >= gameOverTimeStart + forceGameOverTime)
             {
                 // Hide Game Over
                 changeAlpha(0f);
@@ -54,6 +64,9 @@ public class HealthManagement : MonoBehaviour
 
                 // Resume everything
                 Time.timeScale = 1f;
+
+                // Restart game over timer
+                gameOverTimeStart = -1;
             }
         }
     }
