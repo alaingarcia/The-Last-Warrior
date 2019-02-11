@@ -1110,7 +1110,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.32, y: 3.722515, z: 0.43}
-  m_Center: {x: 0.07214581, y: 0, z: 0}
+  m_Center: {x: 0.07214581, y: -0.13874245, z: 0}
 --- !u!114 &920846916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,8 +2494,6 @@ MonoBehaviour:
   enemyCount: 0
   rateOfDamage: 2
   rateOfHealing: 1
-  forceGameOverTime: 1
-  gameOverTimeRemaining: 0
 --- !u!65 &1693694053
 BoxCollider:
   m_ObjectHideFlags: 0

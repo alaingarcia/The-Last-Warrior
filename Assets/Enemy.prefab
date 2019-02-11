@@ -141,9 +141,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   verticalSpeed: 0.25
-  Health: 100
-  HealthBG: {fileID: 0}
-  HealthBar: {fileID: 0}
 --- !u!65 &6982264704580841752
 BoxCollider:
   m_ObjectHideFlags: 0
