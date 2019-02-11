@@ -54,6 +54,10 @@ public class PlatformerCharacter3D : MonoBehaviour
 
     private void Update()
     {
+        // Don't do anything HP bar related unless this is the Player object
+        if (gameObject.name != "Player")
+            return;
+
         if (Health < 100)
         {
             // Making the bars visible
@@ -91,14 +95,18 @@ public class PlatformerCharacter3D : MonoBehaviour
         // Ignoring certain collisions
         Physics.IgnoreLayerCollision(1, 9);
 
-        // Settings starting opacity
-        newColor = HealthBG.color;
-        newColor.a = 0f;
-        HealthBG.color = newColor;
+        // Don't do anything HP bar related unless this is the Player object
+        if (gameObject.name == "Player")
+        {
+            // Settings starting opacity
+            newColor = HealthBG.color;
+            newColor.a = 0f;
+            HealthBG.color = newColor;
 
-        newColor = HealthBar.color;
-        newColor.a = 0f;
-        HealthBar.color = newColor;
+            newColor = HealthBar.color;
+            newColor.a = 0f;
+            HealthBar.color = newColor;
+        }
     }
 
     public void Die()
