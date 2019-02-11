@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour
     public KeyCode attackKey = KeyCode.Mouse0;
 
     public Text scoreText;
-    private int score;
+    public int score;
 
     public Animator animator;
     public float attackTimer = 0;
@@ -40,8 +40,16 @@ public class Attack : MonoBehaviour
             Collider[] objectsAttacked = Physics.OverlapSphere(attackPos.position, attackRange, attackLayer);
             if (objectsAttacked.Length >= 1)
             {
-                objectsAttacked[0].GetComponent<PlatformerCharacter3D>().Die();
-                score += 100;
+                if (objectsAttacked[0].name.Contains("Enemy") && !objectsAttacked[0].name.Contains("Big"))
+                {
+                    objectsAttacked[0].GetComponent<PlatformerCharacter3D>().Die();
+                    score += 50;
+                }
+                else if (objectsAttacked[0].name.Contains("Enemy") && objectsAttacked[0].name.Contains("Big"))
+                {
+                    objectsAttacked[0].GetComponent<PlatformerCharacter3D>().takeDamage();
+                }
+                
             }
         }
         scoreText.text = "Score: " + score.ToString();

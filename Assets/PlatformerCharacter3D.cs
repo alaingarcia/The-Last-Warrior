@@ -55,10 +55,10 @@ public class PlatformerCharacter3D : MonoBehaviour
     private void Update()
     {
         // Don't do anything HP bar related unless this is the Player object
-        if (gameObject.name != "Player")
+        if (gameObject.name != "Player" && !gameObject.name.Contains("Big"))
             return;
 
-        if (Health < 100)
+        if (Health < 100 && gameObject.name == "Player")
         {
             // Making the bars visible
             newColor = HealthBG.color;
@@ -69,8 +69,8 @@ public class PlatformerCharacter3D : MonoBehaviour
             newColor.a = 1f;
             HealthBar.color = newColor;
         }
-        
-        else
+
+        else if (gameObject.name == "Player")
         {
             // Make bars invisible
             newColor = HealthBG.color;
@@ -114,12 +114,22 @@ public class PlatformerCharacter3D : MonoBehaviour
         HealthManagement hitDetector = GameObject.Find("Hit Detector").GetComponent<HealthManagement>();
         hitDetector.enemyCount -= 1;
         Destroy(gameObject.GetComponent<Collider>());
-        Invoke("Destroy", 2f);
+        Invoke("DestroySelf", 1f);
     }
 
-    public void Destroy()
+    public void DestroySelf()
     {
         Destroy(gameObject);
+    }
+
+    public void takeDamage()
+    {
+        Health -= 50f;
+        if (Health == 0)
+        {
+            Die();
+            GameObject.Find("Player").GetComponent<Attack>().score += 100;
+        }
     }
 
     public void Move(float move_x, float move_z, bool jump)
