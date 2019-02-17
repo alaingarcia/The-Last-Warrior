@@ -8,14 +8,7 @@ public class CompleteCameraController : MonoBehaviour
     private Vector3 offset;         //Private variable to store the offset distance between the player and camera
     public float zoomLevel = 10.0f;
     private Vector3 zoomVector;
-    private bool zoomIn = false;
-
-    public void zoom()
-    {
-        zoomIn = !zoomIn;
-        // zoomLevel negative for zoom in, zoomLevel position for zoom out
-        zoomVector = new Vector3(0.0f, 0.0f, zoomLevel);
-    }
+    public bool zoomIn = false;
 
     // Use this for initialization
     void Start()
@@ -24,11 +17,14 @@ public class CompleteCameraController : MonoBehaviour
         offset = transform.position - player.transform.position;
 
         player = GameObject.Find("Player");
+
     }
 
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
+        zoomVector = new Vector3(0.0f, 0.0f, zoomLevel);
+
         if (!zoomIn)
         {
             // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.

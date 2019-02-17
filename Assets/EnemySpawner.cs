@@ -6,23 +6,19 @@ public class EnemySpawner : MonoBehaviour
     
 {
     public GameObject enemy;
-    private Vector2 spawnLocation;
+    private Vector3 spawnLocation;
 
-    // Spawn rate for enemies, default is every 5 seconds
-    public float spawnRate = 5f;
-
-    // Number of enemies to spawn, default is 5
+    public float spawnRate = 5;
     public int amountToSpawn = 5;
 
     private int amountLeft;
-    private float nextSpawn = 0.0f;
+    private float nextSpawn;
 
     // Start is called before the first frame update
     void Start()
     {
         // Sets spawn location to the currenct location of the spawner
-        spawnLocation = new Vector2(transform.position.x, transform.position.y);
-
+        spawnLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         amountLeft = amountToSpawn;
     }
 

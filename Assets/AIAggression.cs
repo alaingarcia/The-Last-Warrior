@@ -3,43 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace UnityStandardAssets._2D
+public class AIAggression : MonoBehaviour
+
 {
-    [RequireComponent(typeof(PlatformerCharacter2D))]
-    public class AIAggression : MonoBehaviour
+    private PlatformerCharacter3D m_Character;
+    public float speed = 6.0f;
+    private float health = 10.0f;
+    private GameObject player;
+    private Vector3 direction;
+    private float speedMultiplier = 1;
 
+    public void setSpeedMultiplier(float multiplier)
     {
-        private PlatformerCharacter2D m_Character;
-        public float speed = 6.0f;
-        private float health = 10.0f;
-        private GameObject player;
-        private Vector2 direction;
-        private float speedMultiplier = 1;
+        speedMultiplier = multiplier;
+    }
 
-        public void setSpeedMultiplier(float multiplier)
-        {
-            speedMultiplier = multiplier;
-        }
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
 
-        private void Awake()
-        {
-            player = GameObject.Find("Player");
-        }
+    // Update is called once per frame
+    void Update()
+    {
+        // Direction points towards player except in y direction, so they don't float up
+        direction = new Vector3(player.transform.position.x, 0f, player.transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, direction, speedMultiplier * speed * Time.deltaTime);
+    }
 
-        // Update is called once per frame
-        void Update()
+    public void takeDamage(float damage)
+    {
+        health = health - damage;
+        if (health <= 0)
         {
-            direction = new Vector2(player.transform.position.x, player.transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, direction, speedMultiplier * speed * Time.deltaTime);
-        }
-
-        public void takeDamage(float damage)
-        {
-            health = health - damage;
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }
