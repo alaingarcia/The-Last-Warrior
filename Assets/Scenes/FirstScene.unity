@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa950421df2ff743ad6d7f57f44b648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpKey: 32
+  slowKey: 304
 --- !u!114 &446808085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 5
+  jumpForce: 45
 --- !u!114 &446808086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7392fbf08bcb4b913d31dd2c2893c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowdownMultiplier: 0.5
 --- !u!1 &504532648
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,5 +644,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8a7248c0922564796331f48f055802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   jumpForce: 400
