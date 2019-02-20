@@ -33,15 +33,13 @@ public class AIFollowPlayer : MonoBehaviour
         // If player is to the right of the AI, move to the right
         if (currentLocation.x < playerLocation.x)
         {
-            // jump is false because its not implemented yet
-            gameObject.GetComponent<Movement>().move(right, false);
+            gameObject.GetComponent<Movement>().move(right);
         }
 
         // If player is to the left of the AI, move to the left
         if (currentLocation.x > playerLocation.x)
         {
-            // jump is false because its not implemented yet
-            gameObject.GetComponent<Movement>().move(left, false);
+            gameObject.GetComponent<Movement>().move(left);
         }
 
     }

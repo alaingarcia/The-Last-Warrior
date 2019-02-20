@@ -10,10 +10,18 @@ public class Movement : MonoBehaviour
     // sprite is used to flip the sprite depending on movement direction
     private SpriteRenderer sprite;
 
-    // customizable max speed
+    // animator used to change the current animation
+    private Animator animator;
+
+    // customizable max speed, default value is based on what felt good
     public float speed = 3.0f;
 
-    private float direction;
+    // customizable jump force, default value is based on what felt good
+    public float jumpForce = 45.0f;
+
+    // a value that will hold how fast the player should be going
+    // directional because: if its less than 0, its going left. if its more than 1, its going right
+    private float directional_velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -25,27 +33,23 @@ public class Movement : MonoBehaviour
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void move(float horizontal, bool jump)
+    public void move(float horizontal)
     {
         // If A, D, Left Arrow, or Right Arrow is pressed, move horizontally
         if (horizontal != 0)
         {
-            direction = horizontal * speed;
+            // horizontal = 1 when D or Right arrow is pressed
+            // horizontal = -1 when A or Left arrow is pressed
+            directional_velocity = horizontal * speed;
 
             // Flip the sprite if moving left (because the sprite faces right by default)
-            if (direction < 0)
+            if (directional_velocity < 0)
             {
                 sprite.flipX = true;
             }
 
             // Flip the sprite back once the player starts moving to the right again
-            else if (direction > 0) 
+            else if (directional_velocity > 0) 
             {
                 sprite.flipX = false;
             }
@@ -53,7 +57,13 @@ public class Movement : MonoBehaviour
             // Actually makes the player move horizontally (on the x axis)
             // The horizontal movement does not have an effect on the vertical movement,
             // so the y component remains body.velocity.y
-            body.velocity = new Vector3(direction, body.velocity.y, 0.0f);
+            body.velocity = new Vector3(directional_velocity, body.velocity.y, 0.0f);
         }
+    }
+
+    public void jump()
+    {  
+        // applies jumpForce in the y direction
+        body.AddForce(0, jumpForce, 0, ForceMode.Impulse);
     }
 }
