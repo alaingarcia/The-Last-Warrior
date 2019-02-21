@@ -13,6 +13,9 @@ public class SlowdownAbility : MonoBehaviour
     // customizable multiplier for player slowdown
     public float playerSlowdownMultiplier = 1.0f;
 
+    // used to access effects for the player camera (zoom, black bars)
+    private CameraEffects playerCameraEffects;
+
     // Function to slow enemies/players down
     public void slowdown()
     {
@@ -30,6 +33,8 @@ public class SlowdownAbility : MonoBehaviour
 
         // PLAYER SLOWDOWN
         gameObject.GetComponent<Movement>().speed *= playerSlowdownMultiplier;
+
+        playerCameraEffects.zoom();
     }
 
     // Function to revert speeds back to normal
@@ -43,5 +48,13 @@ public class SlowdownAbility : MonoBehaviour
 
         // PLAYER NORMAL SPEED
         gameObject.GetComponent<Movement>().speed /= playerSlowdownMultiplier;
+
+        playerCameraEffects.zoom();
+    }
+
+    void Start()
+    {
+        // intialize cameraEffects (which has zoom, black bars) script associated with the player camera
+        playerCameraEffects = GameObject.FindWithTag("PlayerCamera").GetComponent<CameraEffects>();
     }
 }
