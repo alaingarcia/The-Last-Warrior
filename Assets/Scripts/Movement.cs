@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     private float directional_velocity;
 
     //to see if it is on a grounded object
-    private bool isGrounded =true;
+    private bool isGrounded =false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +72,7 @@ public class Movement : MonoBehaviour
     }
 
     public void jump()
-    {  
+    {   
         //Check if it is grounded
         if (isGrounded)
         {

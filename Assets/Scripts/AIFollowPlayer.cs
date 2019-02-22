@@ -13,11 +13,16 @@ public class AIFollowPlayer : MonoBehaviour
     private Vector3 currentLocation;
     private Vector3 playerLocation;
 
+    private Movement movementScript;
+
     // Start is called before the first frame update
     void Start()
     {
         // Set 'player' equal to the transform of the GameObject with the 'Player' tag (should only be one object)
         player = GameObject.FindWithTag("Player").transform;
+
+        // sets value to the movement script
+        movementScript = gameObject.GetComponent<Movement>();
 
         // Set 'body' equal to the current gameObject's Rigidbody (for physics)
         body = gameObject.GetComponent<Rigidbody>();
@@ -33,13 +38,17 @@ public class AIFollowPlayer : MonoBehaviour
         // If player is to the right of the AI, move to the right
         if (currentLocation.x < playerLocation.x)
         {
-            gameObject.GetComponent<Movement>().move(right);
+            movementScript.move(right);
         }
-
+        // If player is below the AI, jump. 1 is added for unnecesary jumping
+        if ((currentLocation.y+1) < playerLocation.y )
+        {
+            movementScript.jump();
+        }
         // If player is to the left of the AI, move to the left
         if (currentLocation.x > playerLocation.x)
         {
-            gameObject.GetComponent<Movement>().move(left);
+            movementScript.move(left);
         }
 
     }
