@@ -14,6 +14,12 @@ public class AIFollowPlayer : MonoBehaviour
     public float jumpCooldown = 2;
     private float currentJumpCooldown;
 
+    // wait sometime before jumping up to the player position (a little different from jump cooldown)
+    // prevents enemy from jumping whenever the player jumps
+    // will only jump if the player has been above the AI for 2 seconds (or whatever jumpWait is)
+    public float jumpWait = 2;
+    private float currentJumpWait;
+
     private Vector3 currentLocation;
     private Vector3 playerLocation;
 
@@ -31,16 +37,17 @@ public class AIFollowPlayer : MonoBehaviour
         // Set 'body' equal to the current gameObject's Rigidbody (for physics)
         body = gameObject.GetComponent<Rigidbody>();
 
-        // initialize cooldown
+        // initialize cooldown and jump wait
         currentJumpCooldown = jumpCooldown;
+        currentJumpWait = jumpWait;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentJumpCooldown < jumpCooldown)
+        if (currentJumpCooldown >= 0)
         {
-            currentJumpCooldown += Time.deltaTime;
+            currentJumpCooldown -= Time.deltaTime;
         }
 
         // Initialize positions for the current frame
@@ -56,13 +63,16 @@ public class AIFollowPlayer : MonoBehaviour
         // If player is below the AI, jump. 1 is added for unnecesary jumping
         if ((currentLocation.y+1) < playerLocation.y )
         {
+            jumpWait -= Time.deltaTime;
             // check if cooldown requirement has been met
-            if (currentJumpCooldown >= jumpCooldown)
+            // then, check if the player has been above the AI for longer than jump wait (do not want the AI just immediately jumping when the player jumps)
+            if ((currentJumpCooldown <= 0) && (jumpWait <= 0))
             {
                 movementScript.jump();
 
-                // set current cooldown to zero, can't jump again until the current cooldown is back to jumpCooldown
-                currentJumpCooldown = 0;
+                // reset current cooldown and current jump wait, can't jump again until the proper amount of time has passed
+                currentJumpCooldown = jumpCooldown;
+                currentJumpWait = jumpWait;
             }
         }
         // If player is to the left of the AI, move to the left
