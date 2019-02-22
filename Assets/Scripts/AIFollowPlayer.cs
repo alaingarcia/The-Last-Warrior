@@ -46,10 +46,6 @@ public class AIFollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentJumpCooldown >= 0)
-        {
-            currentJumpCooldown -= Time.deltaTime;
-        }
 
         // Initialize positions for the current frame
         currentLocation = transform.position;
@@ -73,6 +69,11 @@ public class AIFollowPlayer : MonoBehaviour
             {
                 movementScript.move(left);
             }
+        }
+
+        if (currentJumpCooldown >= 0)
+        {
+            currentJumpCooldown -= Time.deltaTime;
         }
 
         // If player is below the AI, jump. 1 is added for unnecesary jumping
