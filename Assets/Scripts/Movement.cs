@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
     //to see if it is on a grounded object
     private bool isGrounded =false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,14 +36,16 @@ public class Movement : MonoBehaviour
         // Set 'sprite' equal to the sprite of the gameObject
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
+
     void OnCollisionEnter(Collision col)
     {
         //Checks for a collision with an object named ground
-        if (col.gameObject.tag == ("Ground") && isGrounded == false)
+        if ( (col.gameObject.tag == ("Ground") || col.gameObject.tag == ("Enemy") ) && isGrounded == false)
         {
             isGrounded = true;
         }
     }
+
     public void move(float horizontal)
     {
         // If A, D, Left Arrow, or Right Arrow is pressed, move horizontally
