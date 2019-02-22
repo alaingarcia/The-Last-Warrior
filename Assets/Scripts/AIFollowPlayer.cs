@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AIFollowPlayer : MonoBehaviour
 {
@@ -57,7 +58,21 @@ public class AIFollowPlayer : MonoBehaviour
         // If player is to the right of the AI, move to the right
         if (currentLocation.x < playerLocation.x)
         {
-            movementScript.move(right);
+            // prevents enemy from just flipping back and forth when under or on the player
+            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.25)
+            {
+                movementScript.move(right);
+            }
+        }
+
+        // If player is to the left of the AI, move to the left
+        if (currentLocation.x > playerLocation.x)
+        {
+            // prevents enemy from just flipping back and forth when under or on the player
+            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.25)
+            {
+                movementScript.move(left);
+            }
         }
 
         // If player is below the AI, jump. 1 is added for unnecesary jumping
@@ -75,11 +90,5 @@ public class AIFollowPlayer : MonoBehaviour
                 currentJumpWait = jumpWait;
             }
         }
-        // If player is to the left of the AI, move to the left
-        if (currentLocation.x > playerLocation.x)
-        {
-            movementScript.move(left);
-        }
-
     }
 }
