@@ -78,7 +78,9 @@ public class AIFollowPlayer : MonoBehaviour
         // If player is below the AI, jump. 1 is added for unnecesary jumping
         if ((currentLocation.y+1) < playerLocation.y )
         {
-            jumpWait -= Time.deltaTime;
+            // lower the jump wait so that jumping will eventually occur
+            currentJumpWait -= Time.deltaTime;
+
             // check if cooldown requirement has been met
             // then, check if the player has been above the AI for longer than jump wait (do not want the AI just immediately jumping when the player jumps)
             if ((currentJumpCooldown <= 0) && (jumpWait <= 0))
