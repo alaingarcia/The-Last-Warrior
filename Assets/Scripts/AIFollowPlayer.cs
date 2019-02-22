@@ -59,7 +59,7 @@ public class AIFollowPlayer : MonoBehaviour
         if (currentLocation.x < playerLocation.x)
         {
             // prevents enemy from just flipping back and forth when under or on the player
-            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.25)
+            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
             {
                 movementScript.move(right);
             }
@@ -69,7 +69,7 @@ public class AIFollowPlayer : MonoBehaviour
         if (currentLocation.x > playerLocation.x)
         {
             // prevents enemy from just flipping back and forth when under or on the player
-            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.25)
+            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
             {
                 movementScript.move(left);
             }
@@ -89,6 +89,12 @@ public class AIFollowPlayer : MonoBehaviour
                 currentJumpCooldown = jumpCooldown;
                 currentJumpWait = jumpWait;
             }
+        }
+        
+        // reset the waiting if the player jumps back down
+        else
+        {
+            currentJumpWait = jumpWait;
         }
     }
 }

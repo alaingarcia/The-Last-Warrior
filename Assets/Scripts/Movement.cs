@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         //Checks for a collision with an object named ground
-        if ( (col.gameObject.tag == ("Ground") || col.gameObject.tag == ("Enemy") ) && isGrounded == false)
+        if ( (col.gameObject.tag == ("Ground") || col.collider.gameObject.tag == ("Enemy") ) && isGrounded == false)
         {
             isGrounded = true;
         }
