@@ -23,6 +23,9 @@ public class Movement : MonoBehaviour
     // directional because: if its less than 0, its going left. if its more than 1, its going right
     private float directional_velocity;
 
+    //to see if it is on a grounded object
+    private bool isGrounded =true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,14 @@ public class Movement : MonoBehaviour
         // Set 'sprite' equal to the sprite of the gameObject
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
-
+    void OnCollisionEnter(Collision col)
+    {
+        //Checks for a collision with an object named ground
+        if (col.gameObject.tag == ("Ground") && isGrounded == false)
+        {
+            isGrounded = true;
+        }
+    }
     public void move(float horizontal)
     {
         // If A, D, Left Arrow, or Right Arrow is pressed, move horizontally
@@ -63,7 +73,13 @@ public class Movement : MonoBehaviour
 
     public void jump()
     {  
-        // applies jumpForce in the y direction
-        body.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+        //Check if it is grounded
+        if (isGrounded)
+        {
+            // applies jumpForce in the y direction
+            body.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            isGrounded = false;
+        }
+       
     }
 }
