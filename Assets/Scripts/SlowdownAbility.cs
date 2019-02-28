@@ -28,7 +28,7 @@ public class SlowdownAbility : MonoBehaviour
         // save initialSpeed for that gameObject to be order to revert it later
         foreach (GameObject enemy in enemies)
         {
-            enemy.GetComponent<Movement>().speed *= enemySlowdownMultiplier;
+            enemy.GetComponent<Rigidbody>().velocity *= enemySlowdownMultiplier;
         }
 
         // PLAYER SLOWDOWN
@@ -43,7 +43,7 @@ public class SlowdownAbility : MonoBehaviour
         // ENEMY NORMAL SPEED
         foreach(GameObject enemy in enemies)
         {
-            enemy.GetComponent<Movement>().speed /= enemySlowdownMultiplier;
+            enemy.GetComponent<Rigidbody>().velocity /= enemySlowdownMultiplier;
         }
 
         // PLAYER NORMAL SPEED

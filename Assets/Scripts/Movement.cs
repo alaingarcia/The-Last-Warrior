@@ -55,16 +55,18 @@ public class Movement : MonoBehaviour
             // horizontal = -1 when A or Left arrow is pressed
             directional_velocity = horizontal * speed;
 
-            // Flip the sprite if moving left (because the sprite faces right by default)
+            Vector3 oldScale = transform.localScale;
+
+            // Flip the sprite and colliders if moving left (because the sprite faces right by default)
             if (directional_velocity < 0)
-            {
-                sprite.flipX = true;
+            {     
+                transform.localScale = new Vector3 (Mathf.Abs(oldScale.x) * -1f, oldScale.y, oldScale.z);
             }
 
-            // Flip the sprite back once the player starts moving to the right again
+            // Flip the sprite and colliders back once the player starts moving to the right again
             else if (directional_velocity > 0) 
             {
-                sprite.flipX = false;
+                transform.localScale = new Vector3 (Mathf.Abs(oldScale.x), oldScale.y, oldScale.z);
             }
 
             // Actually makes the player move horizontally (on the x axis)

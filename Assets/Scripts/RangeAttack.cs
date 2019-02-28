@@ -6,11 +6,15 @@ public class RangeAttack : MonoBehaviour
 {
     // Reference to arrow prefab (will be instantiated on attack)
     [SerializeField] private GameObject missileObjectPrefab;
+    private GameObject missile;
     private Rigidbody missileBody;
 
     // Time it takes to hit the player (in seconds)
     // Default 1 second
     public float timeToHit = 1;
+    
+    //Time it takes for the missile to be destroyed
+    public float timeUntilDestroyed = 3;
 
     // movement variables
     private Movement movementScript;
@@ -66,7 +70,8 @@ public class RangeAttack : MonoBehaviour
     void rangedAttack()
     {   
         // Instantiate the missile at the beginning of the attack
-        missileBody = Instantiate(missileObjectPrefab, transform.position, transform.rotation).GetComponent<Rigidbody>();
+        missile = Instantiate(missileObjectPrefab, transform.position, transform.rotation);
+        missileBody = missile.GetComponent<Rigidbody>();
         
         // Set missile velocity using the trajectory script
         missileBody.velocity = HitTargetAtTime(transform.position, target.position, new Vector3(0f, -9.81f, 0f), timeToHit);
@@ -76,6 +81,8 @@ public class RangeAttack : MonoBehaviour
         {
             missileBody.GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        Destroy(missile, timeUntilDestroyed);
     }
 
 
