@@ -8,6 +8,10 @@ public class RangeAttack : MonoBehaviour
     [SerializeField] private GameObject missileObjectPrefab;
     private Rigidbody missileBody;
 
+    // Time it takes to hit the player (in seconds)
+    // Default 1 second
+    public float timeToHit = 1;
+
     // movement variables
     private Movement movementScript;
     private float left = -1;
@@ -65,7 +69,7 @@ public class RangeAttack : MonoBehaviour
         missileBody = Instantiate(missileObjectPrefab, transform.position, transform.rotation).GetComponent<Rigidbody>();
         
         // Set missile velocity using the trajectory script
-        missileBody.velocity = HitTargetAtTime(transform.position, target.position, new Vector3(0f, -9.81f, 0f), 1f);
+        missileBody.velocity = HitTargetAtTime(transform.position, target.position, new Vector3(0f, -9.81f, 0f), timeToHit);
         
         // Flip depending on where the missile is going
         if (missileBody.velocity.x < 0)

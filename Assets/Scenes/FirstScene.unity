@@ -398,6 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missileObjectPrefab: {fileID: 6871175222781989027, guid: 8f62e102263d03a4fa1ee998cb8fd65a,
     type: 3}
+  timeToHit: 0.5
   defaultCooldown: 3
 --- !u!65 &1947996445
 BoxCollider:
