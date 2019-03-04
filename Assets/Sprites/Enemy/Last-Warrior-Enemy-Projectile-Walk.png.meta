@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: 1e687b1f8360c9a4fa23bd91c46062d3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Last-Warrior-Enemy-Projectile-Walk_0
+    21300002: Last-Warrior-Enemy-Projectile-Walk_1
+    21300004: Last-Warrior-Enemy-Projectile-Walk_2
+    21300006: Last-Warrior-Enemy-Projectile-Walk_3
+    21300008: Last-Warrior-Enemy-Projectile-Walk_4
+    21300010: Last-Warrior-Enemy-Projectile-Walk_5
+    21300012: Last-Warrior-Enemy-Projectile-Walk_6
+    21300014: Last-Warrior-Enemy-Projectile-Walk_7
+    21300016: Last-Warrior-Enemy-Projectile-Walk_8
+    21300018: Last-Warrior-Enemy-Projectile-Walk_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,11 +92,211 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 403
+        width: 230
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037d16b295583514491db8d304943be6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 403
+        width: 240
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e817ed0bbb09ea14c9f39ab7f1c20f40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 512
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f937d101c10ca348badaa8eba8fac40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_3
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 404
+        width: 249
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a0ea9399d219d48b13e23c8eea0500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_4
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 403
+        width: 236
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d3145e342e0a3418db1fa530978129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_5
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 404
+        width: 233
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7382cd161507f24fa5d1c7aa3e4eb3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_6
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 402
+        width: 233
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc99cb2c2d491e4ead8749146cd2d2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_7
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 400
+        width: 247
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d8671b883e71d4b9f8d0ee10d7da19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_8
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 403
+        width: 240
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb8f3d45637a8d4e9632d3f4250bffc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Enemy-Projectile-Walk_9
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 404
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7752d0369932d408ffa6840a2ef50e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2837ab48a4699404da510501101dddf5
     vertices: []
     indices: 
     edges: []

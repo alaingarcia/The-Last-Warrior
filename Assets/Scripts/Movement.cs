@@ -35,6 +35,9 @@ public class Movement : MonoBehaviour
 
         // Set 'sprite' equal to the sprite of the gameObject
         sprite = gameObject.GetComponent<SpriteRenderer>();
+
+        // set 'animator' equal to the animator of the gameObject
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void OnCollisionEnter(Collision col)
@@ -44,6 +47,21 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        // Update animations accordingly if we're grounded
+        animator.SetBool("Ground", isGrounded);
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        //Checks for a collision with an object named ground
+        if ((col.gameObject.tag == ("Ground") || col.collider.gameObject.tag == ("Enemy")) && isGrounded == true)
+        {
+            isGrounded = false;
+        }
+
+        // Update animations accordingly if we're grounded
+        animator.SetBool("Ground", isGrounded);
     }
 
     public void move(float horizontal)
@@ -74,6 +92,9 @@ public class Movement : MonoBehaviour
             // so the y component remains body.velocity.y
             body.velocity = new Vector3(directional_velocity, body.velocity.y, 0.0f);
         }
+
+        // flag animations for horizontal movement
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
     }
 
     public void jump()
@@ -84,7 +105,6 @@ public class Movement : MonoBehaviour
             // applies jumpForce in the y direction
             body.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             isGrounded = false;
-        }
-       
+        }  
     }
 }
