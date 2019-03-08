@@ -79,18 +79,25 @@ public class Movement : MonoBehaviour
         // Check if the horizontal movement should flip the player
         if (horizontal_velocity != 0)
         {
-            Vector3 oldScale = transform.localScale;
 
             // Flip the sprite and colliders if moving left (because the sprite faces right by default)
             if (horizontal_velocity < 0)
-            {     
-                transform.localScale = new Vector3 (Mathf.Abs(oldScale.x) * -1f, oldScale.y, oldScale.z);
+            {   
+                sprite.flipX = true;  
+                if (gameObject.transform.Find("WeaponHitBox"))
+                {
+                    gameObject.transform.Find("WeaponHitBox").localScale = new Vector3(-1f, 1f, 1f);
+                }         
             }
 
             // Flip the sprite and colliders back once the player starts moving to the right again
             else if (horizontal_velocity > 0) 
             {
-                transform.localScale = new Vector3 (Mathf.Abs(oldScale.x), oldScale.y, oldScale.z);
+                sprite.flipX = false;
+                if (gameObject.transform.Find("WeaponHitBox"))
+                {
+                    gameObject.transform.Find("WeaponHitBox").localScale = new Vector3(1f, 1f, 1f);
+                }    
             }
         }
 

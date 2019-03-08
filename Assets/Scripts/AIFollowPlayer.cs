@@ -59,6 +59,12 @@ public class AIFollowPlayer : MonoBehaviour
             {
                 movementScript.move(right, 0);
             }
+
+            // if close enough, attack with melee if available
+            else
+            {
+                gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>().Attack();
+            }
         }
 
         // If player is to the left of the AI, move to the left
@@ -68,6 +74,12 @@ public class AIFollowPlayer : MonoBehaviour
             if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
             {
                 movementScript.move(left, 0);
+            }
+
+            // if close enough, attack with melee if available
+            else
+            {
+                gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>().Attack();
             }
         }
 

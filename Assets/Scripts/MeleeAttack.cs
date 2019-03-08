@@ -16,7 +16,8 @@ public class MeleeAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player")
         {
             targets.Add(other.gameObject);
         }
@@ -24,7 +25,7 @@ public class MeleeAttack : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player")
         {
             targets.Remove(other.gameObject);
         }
