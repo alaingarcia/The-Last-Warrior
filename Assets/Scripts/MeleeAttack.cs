@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
+    Collider WeaponHitBox;
+    public float damage;
+    List<GameObject> targets = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        WeaponHitBox = gameObject.GetComponent<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Enemy")
+        {
+            targets.Add(other.gameObject);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            targets.Remove(other.gameObject);
+        }
+    }
+
+    public void Attack()
+    {
+        foreach (GameObject target in targets)
+        {
+            if (target)
+            {
+                target.GetComponent<Health>().TakeDamage(damage);
+            }
+            else
+            {
+                targets.Remove(target);
+            }
+        }
     }
 }

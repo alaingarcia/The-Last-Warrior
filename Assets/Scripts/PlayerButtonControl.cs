@@ -7,22 +7,22 @@ public class PlayerButtonControl : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    // default jump button will be space
+    // default buttons
     public KeyCode jumpKey = KeyCode.Space;
-
     public KeyCode slowKey = KeyCode.LeftShift;
+    public KeyCode attackKey = KeyCode.Mouse0;
 
-    // gets the movement component of the gameObject
+    // gets the components of the gameObject to call functions
     private Movement movementScript;
-
     private SlowdownAbility slowdownScript;
+    private MeleeAttack attackScript;
 
     void Start() 
     {
-        // sets value to the movement script
+        // sets script values
         movementScript = gameObject.GetComponent<Movement>();
-
         slowdownScript = gameObject.GetComponent<SlowdownAbility>();
+        attackScript = gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>();
     }
 
     // Update is called once per frame
@@ -47,6 +47,11 @@ public class PlayerButtonControl : MonoBehaviour
         if (Input.GetKeyUp(slowKey))
         {
             slowdownScript.normalSpeed();
+        }
+
+        if (Input.GetKeyDown(attackKey))
+        {
+            attackScript.Attack();
         }
     }
 }
