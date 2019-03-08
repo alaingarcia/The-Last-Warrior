@@ -57,13 +57,13 @@ public class RangeAttack : MonoBehaviour
         // If target is to the left, move left
         if (target.position.x < transform.position.x)
         {
-            movementScript.move(left);
+            movementScript.move(left, 0);
         }
 
         // If target is to the right, move right
         else
         {
-            movementScript.move(right);
+            movementScript.move(right, 0);
         }
     }
 

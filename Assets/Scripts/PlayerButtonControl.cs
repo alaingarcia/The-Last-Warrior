@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerButtonControl : MonoBehaviour
 {
     private float horizontal;
+    private float vertical;
 
     // default jump button will be space
     public KeyCode jumpKey = KeyCode.Space;
@@ -28,7 +29,9 @@ public class PlayerButtonControl : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
-        movementScript.move(horizontal);
+        vertical = Input.GetAxis("Vertical");
+
+        movementScript.move(horizontal, vertical);
 
         // if jump button is pressed, call jump from the movement script
         if (Input.GetKeyDown(jumpKey))

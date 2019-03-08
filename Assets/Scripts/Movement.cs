@@ -20,11 +20,13 @@ public class Movement : MonoBehaviour
     public float jumpForce = 45.0f;
 
     // a value that will hold how fast the player should be going
-    // directional because: if its less than 0, its going left. if its more than 1, its going right
-    private float directional_velocity;
+    // if horizontal is less than 0, its going left. if its more than 1, its going right
+    // if vertical is less than 0, its coming towards the camera
+    private float horizontal_velocity;
+    private float vertical_velocity;
 
     //to see if it is on a grounded object
-    private bool isGrounded =false;
+    private bool isGrounded = false;
 
 
     // Start is called before the first frame update
@@ -64,34 +66,37 @@ public class Movement : MonoBehaviour
         animator.SetBool("Ground", isGrounded);
     }
 
-    public void move(float horizontal)
+    public void move(float horizontal, float vertical)
     {
-        // If A, D, Left Arrow, or Right Arrow is pressed, move horizontally
-        if (horizontal != 0)
-        {
-            // horizontal = 1 when D or Right arrow is pressed
-            // horizontal = -1 when A or Left arrow is pressed
-            directional_velocity = horizontal * speed;
+        // horizontal = 1 when D or Right arrow is pressed
+        // horizontal = -1 when A or Left arrow is pressed
+        horizontal_velocity = horizontal * speed;
 
+        // vertical = 1 when W or Up arrow is pressed
+        // vertical = -1 when S or Down arrow is pressed
+        vertical_velocity = vertical * speed;
+
+        // Check if the horizontal movement should flip the player
+        if (horizontal_velocity != 0)
+        {
             Vector3 oldScale = transform.localScale;
 
             // Flip the sprite and colliders if moving left (because the sprite faces right by default)
-            if (directional_velocity < 0)
+            if (horizontal_velocity < 0)
             {     
                 transform.localScale = new Vector3 (Mathf.Abs(oldScale.x) * -1f, oldScale.y, oldScale.z);
             }
 
             // Flip the sprite and colliders back once the player starts moving to the right again
-            else if (directional_velocity > 0) 
+            else if (horizontal_velocity > 0) 
             {
                 transform.localScale = new Vector3 (Mathf.Abs(oldScale.x), oldScale.y, oldScale.z);
             }
-
-            // Actually makes the player move horizontally (on the x axis)
-            // The horizontal movement does not have an effect on the vertical movement,
-            // so the y component remains body.velocity.y
-            body.velocity = new Vector3(directional_velocity, body.velocity.y, 0.0f);
         }
+
+        // Actually makes the player move horizontally (on the x axis) and vertically (z axis)
+        // y component remains body.velocity.y because that is only changed by jump
+        body.velocity = new Vector3(horizontal_velocity, body.velocity.y, vertical_velocity);
 
         // flag animations for horizontal movement
         animator.speed = Mathf.Abs(horizontal);

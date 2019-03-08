@@ -57,7 +57,7 @@ public class AIFollowPlayer : MonoBehaviour
             // prevents enemy from just flipping back and forth when under or on the player
             if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
             {
-                movementScript.move(right);
+                movementScript.move(right, 0);
             }
         }
 
@@ -67,7 +67,7 @@ public class AIFollowPlayer : MonoBehaviour
             // prevents enemy from just flipping back and forth when under or on the player
             if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
             {
-                movementScript.move(left);
+                movementScript.move(left, 0);
             }
         }
 
