@@ -94,7 +94,7 @@ public class Movement : MonoBehaviour
         }
 
         // flag animations for horizontal movement
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        animator.speed = Mathf.Abs(horizontal);
     }
 
     public void jump()
