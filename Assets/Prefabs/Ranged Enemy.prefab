@@ -32,7 +32,7 @@ RectTransform:
   m_Children:
   - {fileID: 718133075266065078}
   m_Father: {fileID: 2643433783363122732}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -205,7 +205,6 @@ Transform:
   m_LocalPosition: {x: 3.18, y: 2.88, z: 0.052734375}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
-  - {fileID: 6495066660279274322}
   - {fileID: 1412887106198729186}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -301,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missileObjectPrefab: {fileID: 6871175222781989027, guid: 8f62e102263d03a4fa1ee998cb8fd65a,
     type: 3}
+  missileDamage: 50
   timeToHit: 0.5
   timeUntilDestroyed: 3
   defaultCooldown: 3
@@ -318,47 +318,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.01
   jumpForce: 0
---- !u!1 &7607586075196189562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6495066660279274322}
-  - component: {fileID: 7174938883265837781}
-  m_Layer: 0
-  m_Name: TakeDamageHitBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6495066660279274322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7607586075196189562}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2643433783363122732}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7174938883265837781
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7607586075196189562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 8.69, z: 1}
-  m_Center: {x: -0.19, y: 0, z: 0}

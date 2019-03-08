@@ -8,6 +8,7 @@ public class RangeAttack : MonoBehaviour
     [SerializeField] private GameObject missileObjectPrefab;
     private GameObject missile;
     private Rigidbody missileBody;
+    public float missileDamage = 50;
 
     // Time it takes to hit the player (in seconds)
     // Default 1 second
@@ -86,7 +87,7 @@ public class RangeAttack : MonoBehaviour
     }
 
 
-    // Trajectories thanks to: https://answers.unity.com/questions/1087568/3d-trajectory-prediction.html#answer-1087707
+    // Trajectory functions below thanks to: https://answers.unity.com/questions/1087568/3d-trajectory-prediction.html#answer-1087707
     public static Vector3 HitTargetAtTime(Vector3 startPosition, Vector3 targetPosition, Vector3 gravityBase, float timeToTarget)
     {
         Vector3 AtoB = targetPosition - startPosition;
