@@ -37,12 +37,14 @@ public class MeleeAttack : MonoBehaviour
         {
             if (target)
             {
-                target.GetComponent<Health>().TakeDamage(damage);
+                // Confirm that our target has health before we try to deal damage to it
+                if (target.GetComponent<Health>() != null)
+                    target.GetComponent<Health>().TakeDamage(damage);
             }
-            else
+            /*else
             {
                 targets.Remove(target);
-            }
+            }*/
         }
     }
 }

@@ -45,25 +45,35 @@ public class Movement : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         //Checks for a collision with an object named ground
-        if ( (col.gameObject.tag == ("Ground") || col.collider.gameObject.tag == ("Enemy") ) && isGrounded == false)
+        if (col.gameObject.tag == "Ground" || col.collider.gameObject.tag == "Enemy")
         {
             isGrounded = true;
         }
+
+        //Debug.Log("CollisionEnter with " + col.gameObject.name);
 
         // Update animations accordingly if we're grounded
         animator.SetBool("Ground", isGrounded);
     }
 
-    void OnCollisionExit(Collision col)
+    /*void OnCollisionExit(Collision col)
     {
-        //Checks for a collision with an object named ground
-        if ((col.gameObject.tag == ("Ground") || col.collider.gameObject.tag == ("Enemy")) && isGrounded == true)
+        //If we just left the ground, we are no longer grounded
+        if (col.gameObject.tag == "Ground" || col.collider.gameObject.tag == "Enemy")
         {
             isGrounded = false;
         }
 
+        Debug.Log("CollisionExit with " + col.gameObject.name);
+
         // Update animations accordingly if we're grounded
         animator.SetBool("Ground", isGrounded);
+    }*/
+
+    void Update()
+    {
+        // update animation stats for falling or jumping based on our Y velocity
+        animator.SetFloat("VelocityY", body.velocity.y);
     }
 
     public void move(float horizontal, float vertical)
@@ -105,18 +115,22 @@ public class Movement : MonoBehaviour
         // y component remains body.velocity.y because that is only changed by jump
         body.velocity = new Vector3(horizontal_velocity, body.velocity.y, vertical_velocity);
 
-        // flag animations for horizontal movement
-        animator.speed = Mathf.Abs(horizontal);
+        // flag animations for horizontal movement. We use the same animation for left/right movement so always pass in a positive value
+        animator.SetFloat("VelocityX", Mathf.Abs(horizontal));
+
+        // flag animations for vertical movement
+        animator.SetFloat("VelocityZ", vertical);
     }
 
     public void jump()
     {   
-        //Check if it is grounded
-        if (isGrounded)
+        // Don't jump if we are already jumping/falling
+        if (/*isGrounded*/ body.velocity.y < 0.1 && body.velocity.y > -0.1)
         {
             // applies jumpForce in the y direction
             body.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             isGrounded = false;
+            animator.SetBool("Ground", isGrounded);
         }  
     }
 }
