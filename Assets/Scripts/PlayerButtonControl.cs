@@ -38,13 +38,16 @@ public class PlayerButtonControl : MonoBehaviour
         {
             movementScript.jump();
         }
-
-        if (Input.GetKeyDown(slowKey))
+        
+        if (slowdownScript.slowCooldownCurrent > 1)
         {
-            slowdownScript.slowdown();
+            if (Input.GetKeyDown(slowKey))
+            {
+              slowdownScript.slowdown();
+            }
         }
 
-        if (Input.GetKeyUp(slowKey))
+        if (Input.GetKeyUp(slowKey) || slowdownScript.slowCooldownCurrent < 1)
         {
             slowdownScript.normalSpeed();
         }
