@@ -133,4 +133,16 @@ public class Movement : MonoBehaviour
             animator.SetBool("Ground", isGrounded);
         }  
     }
+
+    public void jump(float force)
+    {
+        // Don't jump if we are already jumping/falling
+        if (/*isGrounded*/ body.velocity.y < 0.1 && body.velocity.y > -0.1)
+        {
+            // applies jumpForce in the y direction
+            body.AddForce(0, force, 0, ForceMode.Impulse);
+            isGrounded = false;
+            animator.SetBool("Ground", isGrounded);
+        }
+    }
 }

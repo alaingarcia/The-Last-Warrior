@@ -67,7 +67,7 @@ public class AIFollowPlayer : MonoBehaviour
         {
             if (currentJumpCooldown <= 0)
             {
-                movementScript.jump();
+                movementScript.jump(4.0f);
 
                 // reset current cooldown and current jump wait, can't jump again until the proper amount of time has passed
                 currentJumpCooldown = jumpCooldown;
