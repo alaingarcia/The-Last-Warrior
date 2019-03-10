@@ -26,6 +26,9 @@ public class CameraEffects : MonoBehaviour
     // By default, not zoomed in
     private bool zoomedIn = false;
 
+    // By default, no cinematic bars
+    private bool cinematicEffect = false;
+
     void Start()
     {
         // Initializes player camera
@@ -38,6 +41,11 @@ public class CameraEffects : MonoBehaviour
     public void zoom()
     {
         zoomedIn = !zoomedIn;
+    }
+
+    public void cinematic()
+    {
+        cinematicEffect = !cinematicEffect;
     }
 
     void Update()
@@ -54,6 +62,11 @@ public class CameraEffects : MonoBehaviour
         else if (currentZoomLevel != normalZoomLevel)
         {
             playerCamera.fieldOfView = Mathf.Lerp(currentZoomLevel, normalZoomLevel, Time.deltaTime * zoomSmoothing);
+        }
+
+        if (cinematicEffect)
+        {
+            playerCamera.rect = new Rect(0, 0, 10, 10);
         }
     }
 }

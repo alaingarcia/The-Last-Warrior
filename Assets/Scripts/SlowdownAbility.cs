@@ -35,6 +35,7 @@ public class SlowdownAbility : MonoBehaviour
         gameObject.GetComponent<Movement>().speed *= playerSlowdownMultiplier;
 
         playerCameraEffects.zoom();
+        playerCameraEffects.cinematic();
     }
 
     // Function to revert speeds back to normal
