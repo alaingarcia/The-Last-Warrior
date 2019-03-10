@@ -38,9 +38,9 @@ public class CameraEffects : MonoBehaviour
         normalZoomLevel = (int)playerCamera.fieldOfView;
     }
 
-    public void zoom()
+    public void zoom(bool zoomIn)
     {
-        zoomedIn = !zoomedIn;
+        zoomedIn = zoomIn;
     }
 
     public void cinematic()

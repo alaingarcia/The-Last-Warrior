@@ -22,14 +22,12 @@ public class Health : MonoBehaviour
     {
         health = startingHealth;
 
-        healthBar = gameObject.transform.Find("HealthCanvas").Find("HealthBar").GetComponent<Image>();
+        healthBar = gameObject.transform.Find("StatCanvas").Find("HealthBar").GetComponent<Image>();
         
+        // initialize gameOver image
         if (gameObject.tag == "Player")
         {
             gameOver = gameObject.transform.Find("GameOverCanvas").Find("GameOverImage").GetComponent<Image>();
-            imageColor = gameOver.color;
-            imageColor.a = 0f;
-            gameOver.color = imageColor;
         }
     }
 
@@ -37,8 +35,10 @@ public class Health : MonoBehaviour
     {
         HealthDisplay(showHealth);
         
+        // if entity dies
         if (health <= 0)
         {
+            // only die if not the player
             if (gameObject.tag != "Player")
             {
                 Die();

@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  attackTimeDuration: 0
 --- !u!1 &4329392592106588086
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   startingHealth: 100
-  showHealth: 1
+  showHealth: 0
 --- !u!1 &7372795737680429199
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +304,7 @@ GameObject:
   - component: {fileID: 4316799571987738684}
   - component: {fileID: 3670390519530438119}
   m_Layer: 5
-  m_Name: HealthCanvas
+  m_Name: StatCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03276135, g: 0.041264944, b: 0.056635395, a: 1}
+  m_IndirectSpecularColor: {r: 0.03276151, g: 0.041265197, b: 0.05663558, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3185,6 +3185,11 @@ PrefabInstance:
       propertyPath: enemySlowdownMultiplier
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6015202345312456497, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: cooldownWasteRate
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6015202346284683045, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: newZoomLevel
@@ -3273,12 +3278,12 @@ PrefabInstance:
     - target: {fileID: 8933868021053532885, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.109
       objectReference: {fileID: 0}
     - target: {fileID: 8933868021053532885, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -0.000000007450581
       objectReference: {fileID: 0}
     - target: {fileID: 4124277426976478117, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
@@ -3354,6 +3359,26 @@ PrefabInstance:
         type: 3}
       propertyPath: attackTimeDuration
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093559950844602688, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093559950844602688, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093559950844602688, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093559950844602688, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fa7479b764c9a46b8f3befd5f57732, type: 3}
