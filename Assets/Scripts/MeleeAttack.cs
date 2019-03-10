@@ -18,7 +18,6 @@ public class MeleeAttack : MonoBehaviour
     void Start()
     {
         WeaponHitBox = gameObject.GetComponent<Collider>();
-        Debug.Log("Parent of WeaponHitBox: " + gameObject.transform.parent.name);
         animator = gameObject.transform.parent.GetComponent<Animator>();
     }
 

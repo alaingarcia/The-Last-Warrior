@@ -15,6 +15,9 @@ public class AIFollowPlayer : MonoBehaviour
     public float jumpCooldown = 2;
     private float currentJumpCooldown;
 
+    // minimum distance between enemies in the flock
+    public float minDist;
+
     // wait sometime before jumping up to the player position (a little different from jump cooldown)
     // prevents enemy from jumping whenever the player jumps
     // will only jump if the player has been above the AI for 2 seconds (or whatever jumpWait is)
@@ -25,6 +28,8 @@ public class AIFollowPlayer : MonoBehaviour
     private Vector3 playerLocation;
 
     private Movement movementScript;
+
+    private GameObject[] flock;
 
     // Start is called before the first frame update
     void Start()
@@ -46,42 +51,52 @@ public class AIFollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (player == null)
+            return;
+        
         // Initialize positions for the current frame
         currentLocation = transform.position;
         playerLocation = player.position;
 
-        // If player is to the right of the AI, move to the right
-        if (currentLocation.x < playerLocation.x)
-        {
-            // prevents enemy from just flipping back and forth when under or on the player
-            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
-            {
-                movementScript.move(right, 0);
-            }
+        // This might be slow
+        flock = GameObject.FindGameObjectsWithTag("Enemy");
 
-            // if close enough, attack with melee if available
-            else
+        // Iterate through all enemies and pick the closest one to us
+        Vector3 closestFlockerPos = Vector3.zero;
+        float closestFlockerDistance = minDist;
+        foreach (var f in flock)
+        {
+            if (f == null || f == gameObject)
+                continue;
+
+            float curDistance = Vector3.Distance(transform.position, f.transform.position);
+            if (curDistance < minDist)
             {
-                gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>().Attack();
+                closestFlockerPos = f.transform.position;
+                closestFlockerDistance = curDistance;
             }
         }
 
-        // If player is to the left of the AI, move to the left
-        if (currentLocation.x > playerLocation.x)
-        {
-            // prevents enemy from just flipping back and forth when under or on the player
-            if (Math.Abs(currentLocation.x - playerLocation.x) > 0.5)
-            {
-                movementScript.move(left, 0);
-            }
+        // If we're close to the player, attack
+        if (Vector3.Distance(transform.position, player.position) < 0.5)
+            gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>().Attack();
 
-            // if close enough, attack with melee if available
-            else
-            {
-                gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>().Attack();
-            }
+        Vector3 direction = player.position - transform.position;
+
+        // We are too close to another enemy
+        if (closestFlockerDistance < minDist)
+        {
+            //Debug.Log("Closest enemy is " + closestFlockerDistance + "m away - too close!");
+            Vector3 avoidDir = transform.position - closestFlockerPos;
+            avoidDir = avoidDir.normalized * (1 - closestFlockerDistance / minDist);
+            direction += avoidDir;
         }
+
+        // change to unit direction vector
+        direction.Normalize();
+
+
+        movementScript.move(direction.x, direction.z);
 
         if (currentJumpCooldown >= 0)
         {
