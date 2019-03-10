@@ -79,7 +79,10 @@ public class AIFollowPlayer : MonoBehaviour
 
         // If we're close to the player, attack
         if (Vector3.Distance(transform.position, player.position) < 0.5)
+        {
             gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>().Attack();
+            return;
+        }
 
         Vector3 direction = player.position - transform.position;
 
@@ -95,7 +98,7 @@ public class AIFollowPlayer : MonoBehaviour
         // change to unit direction vector
         direction.Normalize();
 
-
+        // actually move
         movementScript.move(direction.x, direction.z);
 
         if (currentJumpCooldown >= 0)

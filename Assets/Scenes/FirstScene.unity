@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03276151, g: 0.041265197, b: 0.05663558, a: 1}
+  m_IndirectSpecularColor: {r: 0.03276135, g: 0.041264944, b: 0.056635395, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 1276860585}
   spawnRate: 1
-  enemiesToSpawn: 5
+  enemiesToSpawn: 1
 --- !u!4 &921670637
 Transform:
   m_ObjectHideFlags: 0
@@ -1907,7 +1907,7 @@ Transform:
   m_GameObject: {fileID: 1263798604}
   m_LocalRotation: {x: -0, y: 0.008726558, z: -0, w: 0.999962}
   m_LocalPosition: {x: -7.426321, y: -0.13020039, z: 1.161026}
-  m_LocalScale: {x: 0.1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 2117578255}
   m_RootOrder: 0
@@ -2308,7 +2308,7 @@ Transform:
   m_GameObject: {fileID: 1509922846}
   m_LocalRotation: {x: -0, y: 0.008726558, z: -0, w: 0.999962}
   m_LocalPosition: {x: 2.5436792, y: 0.03979969, z: 0.99102604}
-  m_LocalScale: {x: 0.1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 2117578255}
   m_RootOrder: 1
