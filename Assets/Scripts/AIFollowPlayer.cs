@@ -28,6 +28,7 @@ public class AIFollowPlayer : MonoBehaviour
     private Vector3 playerLocation;
 
     private Movement movementScript;
+    private MovementDetector movementDetector;
 
     private GameObject[] flock;
 
@@ -39,6 +40,9 @@ public class AIFollowPlayer : MonoBehaviour
 
         // sets value to the movement script
         movementScript = gameObject.GetComponent<Movement>();
+
+        // sets value to the movement script
+        movementDetector= gameObject.GetComponent<MovementDetector>();
 
         // Set 'body' equal to the current gameObject's Rigidbody (for physics)
         body = gameObject.GetComponent<Rigidbody>();
@@ -57,6 +61,19 @@ public class AIFollowPlayer : MonoBehaviour
         // Initialize positions for the current frame
         currentLocation = transform.position;
         playerLocation = player.position;
+
+        // Jump if we're stuck
+        if (!movementDetector.IsMoving())
+        {
+            if (currentJumpCooldown <= 0)
+            {
+                movementScript.jump();
+
+                // reset current cooldown and current jump wait, can't jump again until the proper amount of time has passed
+                currentJumpCooldown = jumpCooldown;
+                currentJumpWait = jumpWait;
+            }
+        }
 
         // This might be slow
         flock = GameObject.FindGameObjectsWithTag("Enemy");
