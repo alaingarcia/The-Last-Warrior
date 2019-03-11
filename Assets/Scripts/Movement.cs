@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
         animator.SetBool("Ground", isGrounded);
     }
 
-    /*void OnCollisionExit(Collision col)
+    void OnCollisionExit(Collision col)
     {
         //If we just left the ground, we are no longer grounded
         if (col.gameObject.tag == "Ground" || col.collider.gameObject.tag == "Enemy")
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
 
         // Update animations accordingly if we're grounded
         animator.SetBool("Ground", isGrounded);
-    }*/
+    }
 
     void Update()
     {
@@ -125,7 +125,7 @@ public class Movement : MonoBehaviour
     public void jump()
     {   
         // Don't jump if we are already jumping/falling
-        if (/*isGrounded*/ body.velocity.y < 0.1 && body.velocity.y > -0.1)
+        if (isGrounded)
         {
             // applies jumpForce in the y direction
             body.AddForce(0, jumpForce, 0, ForceMode.Impulse);
