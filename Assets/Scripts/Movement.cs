@@ -14,7 +14,8 @@ public class Movement : MonoBehaviour
     private Animator animator;
 
     // customizable max speed, default value is based on what felt good
-    public float speed = 3.0f;
+    public float startSpeed = 3.0f;
+    public float speed;
 
     // customizable jump force, default value is based on what felt good
     public float jumpForce = 45.0f;
@@ -40,6 +41,8 @@ public class Movement : MonoBehaviour
 
         // set 'animator' equal to the animator of the gameObject
         animator = gameObject.GetComponent<Animator>();
+
+        speed = startSpeed;
     }
 
     void OnCollisionEnter(Collision col)
@@ -116,10 +119,10 @@ public class Movement : MonoBehaviour
         body.velocity = new Vector3(horizontal_velocity, body.velocity.y, vertical_velocity);
 
         // flag animations for horizontal movement. We use the same animation for left/right movement so always pass in a positive value
-        animator.SetFloat("VelocityX", Mathf.Abs(horizontal));
+        animator.SetFloat("VelocityX", Mathf.Abs(horizontal_velocity));
 
         // flag animations for vertical movement
-        animator.SetFloat("VelocityZ", vertical);
+        animator.SetFloat("VelocityZ", vertical_velocity);
     }
 
     public void jump()
@@ -139,6 +142,12 @@ public class Movement : MonoBehaviour
         // Don't jump if we are already jumping/falling
         if (isGrounded)
         {
+            // adds drag if slowed
+            if (speed != startSpeed)
+                body.drag =  20;
+            else
+                body.drag = 0;
+
             // applies jumpForce in the y direction
             body.AddForce(0, force, 0, ForceMode.Impulse);
             isGrounded = false;

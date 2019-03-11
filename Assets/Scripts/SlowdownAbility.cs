@@ -7,6 +7,7 @@ public class SlowdownAbility : MonoBehaviour
 {
     // list of enemy game objects that will be slowed
     private GameObject[] enemies;
+    private GameObject[] missiles;
 
     // customizable multiplier for enemy slowdown
     public float enemySlowdownMultiplier = 0.5f;
@@ -66,15 +67,20 @@ public class SlowdownAbility : MonoBehaviour
 
         // get a list of all enemies (found by tag)
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        missiles = GameObject.FindGameObjectsWithTag("Missile");
 
         // iterate through the enemy list
-        // save initialSpeed for that gameObject to be order to revert it later
         foreach (GameObject enemy in enemies)
         {
             if (enemy)
-                enemy.GetComponent<Rigidbody>().velocity *= enemySlowdownMultiplier;
+                enemy.GetComponent<Movement>().speed *= enemySlowdownMultiplier;
         }
 
+        foreach (GameObject missile in missiles)
+        {
+            if (missile)
+                missile.GetComponent<Rigidbody>().velocity *= enemySlowdownMultiplier;
+        }
         // PLAYER SLOWDOWN
         gameObject.GetComponent<Movement>().speed *= playerSlowdownMultiplier;
 
@@ -90,8 +96,14 @@ public class SlowdownAbility : MonoBehaviour
         // ENEMY NORMAL SPEED
         foreach(GameObject enemy in enemies)
         {
-            if (enemy)
-                enemy.GetComponent<Rigidbody>().velocity /= enemySlowdownMultiplier;
+            if (enemy && enemy.GetComponent<Movement>().speed != enemy.GetComponent<Movement>().startSpeed)
+                enemy.GetComponent<Movement>().speed /= enemySlowdownMultiplier;
+        }
+
+        foreach (GameObject missile in missiles)
+        {
+            if (missile)
+                missile.GetComponent<Rigidbody>().velocity /= enemySlowdownMultiplier;
         }
 
         // PLAYER NORMAL SPEED

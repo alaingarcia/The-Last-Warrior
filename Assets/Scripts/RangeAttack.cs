@@ -8,7 +8,7 @@ public class RangeAttack : MonoBehaviour
     [SerializeField] private GameObject missileObjectPrefab;
     private GameObject missile;
     private Rigidbody missileBody;
-    public float missileDamage = 50;
+    public float missileDamage = 5;
 
     // Time it takes to hit the player (in seconds)
     // Default 1 second

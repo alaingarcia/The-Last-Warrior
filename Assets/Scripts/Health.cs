@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
             else
             {
                 // Show the game over
-                imageColor.a = 1f;
+                imageColor = new Color(1f, 1f, 1f, 1f);
                 gameOver.color = imageColor;
 
                 Time.timeScale = 1f;

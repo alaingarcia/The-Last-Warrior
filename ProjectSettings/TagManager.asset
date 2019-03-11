@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - PlayerCamera
   - Ground
+  - Missile
   layers:
   - Default
   - TransparentFX
