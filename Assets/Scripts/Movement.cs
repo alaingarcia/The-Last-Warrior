@@ -137,7 +137,7 @@ public class Movement : MonoBehaviour
     public void jump(float force)
     {
         // Don't jump if we are already jumping/falling
-        if (/*isGrounded*/ body.velocity.y < 0.1 && body.velocity.y > -0.1)
+        if (isGrounded)
         {
             // applies jumpForce in the y direction
             body.AddForce(0, force, 0, ForceMode.Impulse);
