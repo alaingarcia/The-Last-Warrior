@@ -81,14 +81,17 @@ public class SlowdownAbility : MonoBehaviour
                 enemy.GetComponent<Movement>().speed *= enemySlowdownMultiplier;
         }
 
+        // slow down missiles
         foreach (GameObject missile in missiles)
         {
             if (missile)
                 missile.GetComponent<Rigidbody>().velocity *= enemySlowdownMultiplier;
         }
+
         // PLAYER SLOWDOWN
         gameObject.GetComponent<Movement>().speed *= playerSlowdownMultiplier;
 
+        // zoom in and show cinematic bars
         playerCameraEffects.zoom(true);
         blackBars.cinematicShow(100, 0.2f);
 
