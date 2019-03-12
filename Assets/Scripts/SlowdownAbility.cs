@@ -17,6 +17,8 @@ public class SlowdownAbility : MonoBehaviour
 
     // used to access effects for the player camera (zoom, black bars)
     private CameraEffects playerCameraEffects;
+    
+    private BlackBars blackBars;
 
     // used for the slowdown cooldown
     private Image slowBar;
@@ -29,9 +31,12 @@ public class SlowdownAbility : MonoBehaviour
     
     void Start()
     {
-        // intialize cameraEffects (which has zoom, black bars) script associated with the player camera
+        // initialize cameraEffects (which has zoom) script associated with the player camera
         playerCameraEffects = GameObject.FindWithTag("PlayerCamera").GetComponent<CameraEffects>();
     
+        // initialize blackBars (which has cinematic black bars)
+        blackBars = transform.Find("BlackBarCanvas").transform.Find("CinematicBars").GetComponent<BlackBars>();
+
         // initialize the cooldown bar
         slowBar = gameObject.transform.Find("StatCanvas").Find("SlowBar").GetComponent<Image>();
         slowCooldownCurrent = slowCooldownStart;
@@ -85,7 +90,7 @@ public class SlowdownAbility : MonoBehaviour
         gameObject.GetComponent<Movement>().speed *= playerSlowdownMultiplier;
 
         playerCameraEffects.zoom(true);
-        playerCameraEffects.cinematic();
+        blackBars.cinematicShow(100, 0.2f);
 
         cooldownRestore(false);
     }
@@ -110,6 +115,7 @@ public class SlowdownAbility : MonoBehaviour
         gameObject.GetComponent<Movement>().speed /= playerSlowdownMultiplier;
 
         playerCameraEffects.zoom(false);
+        blackBars.cinematicHide(0.3f);
         cooldownRestore(true);
     }
 
