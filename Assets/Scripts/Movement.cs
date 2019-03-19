@@ -53,8 +53,6 @@ public class Movement : MonoBehaviour
             isGrounded = true;
         }
 
-        //Debug.Log("CollisionEnter with " + col.gameObject.name);
-
         // Update animations accordingly if we're grounded
         animator.SetBool("Ground", isGrounded);
     }
@@ -66,8 +64,6 @@ public class Movement : MonoBehaviour
         {
             isGrounded = false;
         }
-
-        Debug.Log("CollisionExit with " + col.gameObject.name);
 
         // Update animations accordingly if we're grounded
         animator.SetBool("Ground", isGrounded);
@@ -116,7 +112,8 @@ public class Movement : MonoBehaviour
 
         // Actually makes the player move horizontally (on the x axis) and vertically (z axis)
         // y component remains body.velocity.y because that is only changed by jump
-        body.velocity = new Vector3(horizontal_velocity, body.velocity.y, vertical_velocity);
+        //body.velocity = new Vector3(horizontal_velocity, body.velocity.y, vertical_velocity);
+        body.velocity = new Vector3(horizontal_velocity, body.velocity.y, 0);
 
         // flag animations for horizontal movement. We use the same animation for left/right movement so always pass in a positive value
         animator.SetFloat("VelocityX", Mathf.Abs(horizontal_velocity));
