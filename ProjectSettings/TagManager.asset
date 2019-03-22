@@ -8,6 +8,9 @@ TagManager:
   - PlayerCamera
   - Ground
   - Missile
+  - HealthBar
+  - SlowBar
+  - BlackBars
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SlowdownAbility : MonoBehaviour
 {
+    public bool showBar = true;
+
     // list of enemy game objects that will be slowed
     private GameObject[] enemies;
     private GameObject[] missiles;
@@ -35,10 +37,10 @@ public class SlowdownAbility : MonoBehaviour
         playerCameraEffects = GameObject.FindWithTag("PlayerCamera").GetComponent<CameraEffects>();
     
         // initialize blackBars (which has cinematic black bars)
-        blackBars = transform.Find("BlackBarCanvas").transform.Find("CinematicBars").GetComponent<BlackBars>();
+        blackBars = GameObject.FindWithTag("BlackBars").GetComponent<BlackBars>();
 
         // initialize the cooldown bar
-        slowBar = gameObject.transform.Find("StatCanvas").Find("SlowBar").GetComponent<Image>();
+        slowBar = GameObject.FindWithTag("SlowBar").GetComponent<Image>();
         slowCooldownCurrent = slowCooldownStart;
     }
 
@@ -62,7 +64,10 @@ public class SlowdownAbility : MonoBehaviour
             }
         }
 
-        slowBar.fillAmount = slowCooldownCurrent / slowCooldownStart;
+        if (showBar)
+            slowBar.fillAmount = slowCooldownCurrent / slowCooldownStart;
+        else
+            slowBar.fillAmount = 0;
     }
 
     // Function to slow enemies/players down
