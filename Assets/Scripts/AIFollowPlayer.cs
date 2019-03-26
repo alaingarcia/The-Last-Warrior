@@ -11,6 +11,8 @@ public class AIFollowPlayer : MonoBehaviour
     private float right = 1;
     private float left = -1;
 
+    public float followDistance;
+
     // set cooldown for jump to prevent constant jumping
     public float jumpCooldown = 2;
     private float currentJumpCooldown;
@@ -115,8 +117,9 @@ public class AIFollowPlayer : MonoBehaviour
         // change to unit direction vector
         direction.Normalize();
 
-        // actually move
-        movementScript.move(direction.x, direction.z);
+        // actually move if close enough
+        if (Vector3.Distance(transform.position, player.position) < 4)
+            movementScript.move(direction.x, direction.z);
 
         if (currentJumpCooldown >= 0)
         {
