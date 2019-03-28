@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 5df32be2d03e78f4ab0fe9857e89b8ec
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Last-Warrior-Player-Attack_0
+    21300002: Last-Warrior-Player-Attack_1
+    21300004: Last-Warrior-Player-Attack_2
+    21300006: Last-Warrior-Player-Attack_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,11 +86,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Last-Warrior-Player-Attack_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 208
+        width: 305
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cbf692150b2854c8d7b2c63235f607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Player-Attack_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 208
+        width: 752
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0291026926377974d9fcb9c7efd37c44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Player-Attack_2
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 210
+        width: 354
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2199b66cbf7e4fae520e05d046aaf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Player-Attack_3
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 210
+        width: 308
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6d828b0535e2748b45cc98567fc65e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 54d256e54f65303408c65fe184362872
     vertices: []
     indices: 
     edges: []
