@@ -51,13 +51,11 @@ public class Health : MonoBehaviour
                 imageColor = new Color(1f, 1f, 1f, 1f);
                 gameOver.color = imageColor;
 
-                Time.timeScale = 1f;
 
                 // If any key is pressed, go back to the scene
                 if (Input.anyKey)
                 {
-                    SceneManager.LoadScene("FirstScene");
-                    Time.timeScale = 1f;
+                    SceneManager.LoadScene("FirstLevel");
                 }
             }
         }
