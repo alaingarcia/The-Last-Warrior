@@ -11,6 +11,8 @@ TagManager:
   - HealthBar
   - SlowBar
   - BlackBars
+  - sound
+  - Swoosh
   layers:
   - Default
   - TransparentFX
