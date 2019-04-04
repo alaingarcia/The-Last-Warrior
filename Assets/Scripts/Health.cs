@@ -12,15 +12,23 @@ public class Health : MonoBehaviour
     // Health display stuff
     public bool showHealth = true;
     Image healthBar;
+    public bool dead;
 
     // Game Over stuff
     Image gameOver;
     Color imageColor;
 
+    //Sound
+    public AudioSource audio;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         health = startingHealth;
+        //Get oof sound
+        audio = GameObject.FindWithTag("sound").GetComponent<AudioSource>();
 
         healthBar = gameObject.transform.Find("StatCanvas").Find("HealthBar").GetComponent<Image>();
         
@@ -34,9 +42,14 @@ public class Health : MonoBehaviour
     void Update()
     {
         HealthDisplay(showHealth);
-        
+        health --;
         // if entity dies
-        if (health <= 0)
+        if (health <= 0 && !dead)
+        { 
+            dead =true;
+            audio.Play();
+        }
+        if (health <= 0 )
         {
             // only die if not the player
             if (gameObject.tag != "Player")
@@ -51,11 +64,13 @@ public class Health : MonoBehaviour
                 imageColor = new Color(1f, 1f, 1f, 1f);
                 gameOver.color = imageColor;
 
+                Time.timeScale = 1f;
 
                 // If any key is pressed, go back to the scene
                 if (Input.anyKey)
                 {
-                    SceneManager.LoadScene("FirstLevel");
+                    SceneManager.LoadScene("FirstScene");
+                    Time.timeScale = 1f;
                 }
             }
         }
