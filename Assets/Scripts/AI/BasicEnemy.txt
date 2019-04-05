@@ -1,0 +1,33 @@
+tree("Root")
+	repeat
+		mute
+			fallback
+				tree "Attack"
+				tree "Flock"
+				tree "ChasePlayer"
+				tree "Idle"
+
+tree "Flock"
+	while IsNearOtherEnemy
+		repeat
+			sequence
+				SetDirection_Away
+				MoveInDirection
+
+tree "Attack"
+	while IsPlayerInAttackRange
+		sequence
+			AttackPlayer
+
+tree "ChasePlayer"
+	while IsPlayerNear
+		sequence
+			SetMovementDirection_TowardsPlayer
+			MoveInDirection
+
+tree "Idle"
+	while
+		sequence
+			not IsPlayerNear
+			Idle
+		repeat Succeed
