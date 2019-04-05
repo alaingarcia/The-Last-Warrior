@@ -42,7 +42,7 @@ public class Health : MonoBehaviour
     void Update()
     {
         HealthDisplay(showHealth);
-        health --;
+        //health --;
         // if entity dies
         if (health <= 0 && !dead)
         { 

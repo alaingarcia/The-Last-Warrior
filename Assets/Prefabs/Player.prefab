@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 1966236661420228583}
   m_Layer: 5
   m_Name: SlowBar
-  m_TagString: Untagged
+  m_TagString: SlowBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 1758441858304808629}
   m_Layer: 5
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: BlackBars
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,6 +532,7 @@ MonoBehaviour:
   jumpKey: 32
   slowKey: 304
   attackKey: 323
+  swoosh: {fileID: 0}
 --- !u!114 &6015202345312456498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +600,8 @@ MonoBehaviour:
   health: 0
   startingHealth: 100
   showHealth: 1
+  dead: 0
+  audio: {fileID: 0}
 --- !u!108 &2838968583712504895
 Light:
   m_ObjectHideFlags: 0
@@ -850,7 +853,7 @@ GameObject:
   - component: {fileID: 8051850255907620393}
   m_Layer: 5
   m_Name: HealthBar
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
