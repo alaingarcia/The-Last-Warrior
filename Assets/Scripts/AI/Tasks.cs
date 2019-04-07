@@ -110,8 +110,36 @@ public class Tasks : MonoBehaviour
             return;
         }
 
+        // This might be slow
+        flock = GameObject.FindGameObjectsWithTag("Enemy");
+
+        // Iterate through all enemies and pick the closest one to us
+        closestFlockerPos = Vector3.zero;
+        closestFlockerDistance = flockDistance;
+        foreach (var f in flock)
+        {
+            if (f == null || f == gameObject)
+                continue;
+
+            float curDistance = Vector2.Distance(transform.position, f.transform.position);
+            if (curDistance < flockDistance)
+            {
+                closestFlockerPos = f.transform.position;
+                closestFlockerDistance = curDistance;
+            }
+        }
+
         // find difference between our position and player's position
         Vector3 direction = player.position - transform.position;
+
+        // We are too close to another enemy
+        if (closestFlockerDistance < flockDistance)
+        {
+            //Debug.Log("Closest enemy is " + closestFlockerDistance + "m away - too close!");
+            Vector3 avoidDir = transform.position - closestFlockerPos;
+            avoidDir = avoidDir.normalized * (1 - closestFlockerDistance / flockDistance);
+            direction += avoidDir;
+        }
 
         // change to unit direction vector
         direction.Normalize();
