@@ -23,15 +23,16 @@ public class Instructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKey)
+        if (Input.anyKeyDown)
         {
+            // Transition from page 1 to page 2
             if (instructions2.color == invisible)
             {
                 instructions1.color = invisible;
                 instructions2.color = visible;
-                StartCoroutine(Wait(5));
             }
 
+            // Transition from page 2 to the Start Menu
             else
             {
                 SceneManager.LoadScene("StartMenu");   
