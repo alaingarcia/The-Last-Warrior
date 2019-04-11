@@ -15,6 +15,10 @@ public class LevelChange : MonoBehaviour
     {
         TransitionTo("StartMenu");
     }
+    public void LoadInstructions()
+    {
+        TransitionTo("Instructions");
+    }
     public void LoadFirstLevel()
     {
         TransitionTo("FirstLevel");
