@@ -29,12 +29,9 @@ public class SlowdownAbility : MonoBehaviour
     private bool slowCooldownRestore = true;
     public float cooldownWasteRate = 30;
     public float cooldownRestoreRate = 10;
-
-    public AudioSource audio;
     
     void Start()
     {
-        audio = GameObject.FindWithTag("MainMusic").GetComponent<AudioSource>();
         // initialize cameraEffects (which has zoom) script associated with the player camera
         playerCameraEffects = GameObject.FindWithTag("PlayerCamera").GetComponent<CameraEffects>();
     
@@ -80,7 +77,6 @@ public class SlowdownAbility : MonoBehaviour
         // get a list of all enemies (found by tag)
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         missiles = GameObject.FindGameObjectsWithTag("Missile");
-        audio.pitch = 0.8f;
         // iterate through the enemy list
         foreach (GameObject enemy in enemies)
         {
@@ -120,9 +116,6 @@ public class SlowdownAbility : MonoBehaviour
             if (missile)
                 missile.GetComponent<Rigidbody>().velocity /= enemySlowdownMultiplier;
         }
-
-        //SOUND
-        audio.pitch = 1.0f;
 
         // PLAYER NORMAL SPEED
         gameObject.GetComponent<Movement>().speed /= playerSlowdownMultiplier;

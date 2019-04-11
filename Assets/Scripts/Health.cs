@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     // Game Over stuff
     Image gameOver;
     Color imageColor;
+    string currentLevel;
+    
 
     //Sound
     public AudioSource audio;
@@ -37,6 +39,8 @@ public class Health : MonoBehaviour
         {
             gameOver = gameObject.transform.Find("GameOverCanvas").Find("GameOverImage").GetComponent<Image>();
         }
+
+        currentLevel = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -64,13 +68,10 @@ public class Health : MonoBehaviour
                 imageColor = new Color(1f, 1f, 1f, 1f);
                 gameOver.color = imageColor;
 
-                Time.timeScale = 1f;
-
                 // If any key is pressed, go back to the scene
                 if (Input.anyKey)
                 {
-                    SceneManager.LoadScene("FirstScene");
-                    Time.timeScale = 1f;
+                    SceneManager.LoadScene(currentLevel);
                 }
             }
         }

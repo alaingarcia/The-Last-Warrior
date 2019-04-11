@@ -208,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8619391726875438478
 RectTransform:
   m_ObjectHideFlags: 0
@@ -566,6 +566,7 @@ MonoBehaviour:
   slowCooldownCurrent: 0
   cooldownWasteRate: 30
   cooldownRestoreRate: 10
+  audio: {fileID: 0}
 --- !u!95 &6446819654690178594
 Animator:
   serializedVersion: 3
@@ -758,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8093559950844602688
 RectTransform:
   m_ObjectHideFlags: 0
