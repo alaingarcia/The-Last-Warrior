@@ -13,6 +13,7 @@ TagManager:
   - BlackBars
   - sound
   - Swoosh
+  - MainMusic
   layers:
   - Default
   - TransparentFX
