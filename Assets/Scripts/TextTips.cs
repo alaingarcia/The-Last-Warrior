@@ -39,7 +39,7 @@ public class TextTips : MonoBehaviour
                 StartCoroutine(TextFadeIn());
             }
             
-            else if (text.color.a >= 0.99)
+            else if (text.color.a >= 0.9)
             {
                 if (i == 0)
                 {
@@ -62,6 +62,7 @@ public class TextTips : MonoBehaviour
                     if (Input.anyKeyDown)
                     {
                         StartCoroutine(TextFadeOut());
+                        i = i + 1;
                     }
                 }
             }
