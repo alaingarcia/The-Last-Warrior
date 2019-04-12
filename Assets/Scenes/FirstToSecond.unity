@@ -635,10 +635,20 @@ PrefabInstance:
       propertyPath: showHealth
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7075572425463669679, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6298900296596991071, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: m_TargetDisplay
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228154386554101583, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
@@ -1303,6 +1313,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition
       objectReference: {fileID: 0}
+    - target: {fileID: 6363830057624578794, guid: c66a4b5de6a34c44384fb286b32f93c6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6363830057624578792, guid: c66a4b5de6a34c44384fb286b32f93c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1358,15 +1373,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6363830057729509923, guid: c66a4b5de6a34c44384fb286b32f93c6,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1894558004}
     - target: {fileID: 6847389924987645272, guid: c66a4b5de6a34c44384fb286b32f93c6,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6363830057729509923, guid: c66a4b5de6a34c44384fb286b32f93c6,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1894558004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66a4b5de6a34c44384fb286b32f93c6, type: 3}
