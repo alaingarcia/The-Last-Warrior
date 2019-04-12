@@ -16,6 +16,7 @@ TagManager:
   - MainMusic
   - GameOver
   - Text
+  - Wind
   layers:
   - Default
   - TransparentFX

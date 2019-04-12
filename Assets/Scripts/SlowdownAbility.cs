@@ -22,6 +22,8 @@ public class SlowdownAbility : MonoBehaviour
     
     private BlackBars blackBars;
 
+    private WindZone wind;
+
     // used for the slowdown cooldown
     private Image slowBar;
     private float slowCooldownStart = 100;
@@ -41,6 +43,8 @@ public class SlowdownAbility : MonoBehaviour
         // initialize the cooldown bar
         slowBar = GameObject.FindWithTag("SlowBar").GetComponent<Image>();
         slowCooldownCurrent = slowCooldownStart;
+
+        wind = GameObject.FindWithTag("Wind").GetComponent<WindZone>();
     }
 
     void Update()
@@ -99,6 +103,9 @@ public class SlowdownAbility : MonoBehaviour
         blackBars.cinematicShow(100, 0.2f);
 
         cooldownRestore(false);
+
+        if (wind)
+            wind.windTurbulence = wind.windTurbulence/2;
     }
 
     // Function to revert speeds back to normal
@@ -123,6 +130,9 @@ public class SlowdownAbility : MonoBehaviour
         playerCameraEffects.zoom(false);
         blackBars.cinematicHide(0.3f);
         cooldownRestore(true);
+
+        if (wind)
+            wind.windTurbulence = wind.windTurbulence*2;
     }
 
     void cooldownRestore(bool restore)
