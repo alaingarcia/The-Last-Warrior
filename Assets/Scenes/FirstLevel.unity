@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03276151, g: 0.041265197, b: 0.05663558, a: 1}
+  m_IndirectSpecularColor: {r: 0.032761425, g: 0.041265063, b: 0.056635454, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4665,6 +4665,36 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 89769b524eff4344c928580f2515f98c, type: 2}
+    - target: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 94280f809ce27400883b08e80e5d7243, type: 3}
+    - target: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: Priority
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162864549721528135, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: m_Name
+      value: Dissapear
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1276860589, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
