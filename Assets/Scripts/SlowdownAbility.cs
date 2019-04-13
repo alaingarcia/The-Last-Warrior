@@ -24,6 +24,8 @@ public class SlowdownAbility : MonoBehaviour
 
     private WindZone wind;
 
+    //Audio
+    public AudioSource audio;
     // used for the slowdown cooldown
     private Image slowBar;
     private float slowCooldownStart = 100;
@@ -34,6 +36,8 @@ public class SlowdownAbility : MonoBehaviour
     
     void Start()
     {
+        //get audio
+        audio = GameObject.FindWithTag("MainMusic").GetComponent<AudioSource>();
         // initialize cameraEffects (which has zoom) script associated with the player camera
         playerCameraEffects = GameObject.FindWithTag("PlayerCamera").GetComponent<CameraEffects>();
     
@@ -103,6 +107,10 @@ public class SlowdownAbility : MonoBehaviour
         playerCameraEffects.zoom(true);
         blackBars.cinematicShow(100, 0.2f);
 
+        //AUDIO
+        audio.pitch = 0.8f;
+        
+
         cooldownRestore(false);
 
         if (wind)
@@ -128,6 +136,8 @@ public class SlowdownAbility : MonoBehaviour
         // PLAYER NORMAL SPEED
         gameObject.GetComponent<Movement>().speed /= playerSlowdownMultiplier;
 
+        //AUDIO
+        audio.pitch = 1.0f;
         playerCameraEffects.zoom(false);
         blackBars.cinematicHide(0.3f);
         cooldownRestore(true);
