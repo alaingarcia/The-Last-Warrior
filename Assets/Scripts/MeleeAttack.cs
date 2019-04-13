@@ -76,7 +76,9 @@ public class MeleeAttack : MonoBehaviour
         {
             attacking = true;
             attackTimer = attackTimeDuration;
-            swoosh.Play();
+
+            if (gameObject.transform.parent.gameObject.tag == "Player")
+                swoosh.Play();
         }
     }
 }

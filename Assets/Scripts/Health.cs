@@ -18,17 +18,15 @@ public class Health : MonoBehaviour
     Image gameOver;
     Color imageColor;
     string currentLevel;
-    
 
     //Sound
     public AudioSource audio;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
         health = startingHealth;
+
         //Get oof sound
         audio = GameObject.FindWithTag("sound").GetComponent<AudioSource>();
 
@@ -46,13 +44,14 @@ public class Health : MonoBehaviour
     void Update()
     {
         HealthDisplay(showHealth);
-        //health --;
-        // if entity dies
+
+        // if entity died on this tick
         if (health <= 0 && !dead)
         { 
-            dead =true;
+            dead = true;
             audio.Play();
         }
+
         if (health <= 0 )
         {
             // only die if not the player
@@ -96,11 +95,17 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        // First, destroy collider so that the entity sinks into the ground
-        Destroy(gameObject.GetComponent<Collider>());
+        // Stop moving
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-        // After a second, destroy the entity
-        Invoke("DestroySelf", 1f);
+        // Play death animation
+        gameObject.GetComponent<Animator>().Play("Die");
+        
+        // First, destroy collider so that the entity sinks into the ground
+        // Destroy(gameObject.GetComponent<Collider>());
+
+        // After half a second, destroy the entity
+        Invoke("DestroySelf", 0.5f);
     }
 
     // Destroy function used by Die()
