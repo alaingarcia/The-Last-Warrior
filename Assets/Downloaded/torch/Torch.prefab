@@ -50,8 +50,8 @@ MonoBehaviour:
   BaseFlame: {fileID: 100008}
   Etincelles: {fileID: 100004}
   Fumee: {fileID: 100010}
-  MaxLightIntensity: 3
-  IntensityLight: 3
+  MaxLightIntensity: 4
+  IntensityLight: 4
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
