@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 448267660848686326}
   m_Layer: 5
   m_Name: HealthBar
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +277,8 @@ GameObject:
   - component: {fileID: 5598694369254981546}
   - component: {fileID: 4820169765590952715}
   - component: {fileID: 5926113498325068886}
+  - component: {fileID: 7177533146742843435}
+  - component: {fileID: 8105783566554550383}
   m_Layer: 0
   m_Name: Big Enemy
   m_TagString: Enemy
@@ -406,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followDistance: 0
   jumpCooldown: 2
-  minDist: 0
+  minDist: 3
   jumpWait: 2
 --- !u!114 &5926113498325068886
 MonoBehaviour:
@@ -421,10 +423,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  startingHealth: 100
-  showHealth: 0
+  startingHealth: 200
+  showHealth: 1
   dead: 0
   audio: {fileID: 0}
+--- !u!114 &7177533146742843435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878316024991778932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b16f7c1364d148afd023be4ad536c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+--- !u!95 &8105783566554550383
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878316024991778932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89769b524eff4344c928580f2515f98c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5270897148657250075
 GameObject:
   m_ObjectHideFlags: 0

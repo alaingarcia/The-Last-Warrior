@@ -55,7 +55,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!65 &1276860592
 BoxCollider:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   startingHealth: 100
-  showHealth: 0
+  showHealth: 1
   dead: 0
   audio: {fileID: 3478945403117997769}
 --- !u!114 &1276860587

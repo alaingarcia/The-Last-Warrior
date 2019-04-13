@@ -6,7 +6,7 @@ public class MeleeAttack : MonoBehaviour
 {
     Collider WeaponHitBox;
     Animator animator;
-    public float damage;
+    public float damage = 100;
     public float attackTimeDuration;
     List<GameObject> targets = new List<GameObject>();
 

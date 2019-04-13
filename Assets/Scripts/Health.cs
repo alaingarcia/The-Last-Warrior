@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
         //Get oof sound
         audio = GameObject.FindWithTag("sound").GetComponent<AudioSource>();
 
-        healthBar = GameObject.FindWithTag("HealthBar").GetComponent<Image>();
+        healthBar = gameObject.transform.Find("StatCanvas/HealthBarMask/HealthBar").GetComponent<Image>();
         
         // initialize gameOver image
         if (gameObject.tag == "Player")
