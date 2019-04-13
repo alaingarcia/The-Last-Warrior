@@ -91,10 +91,10 @@ TextureImporter:
       name: Last-Warrior-Player-Attack_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 208
-        width: 305
-        height: 596
+        x: 41
+        y: 209
+        width: 306
+        height: 595
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1cbf692150b2854c8d7b2c63235f607
+      spriteID: 567dc7aacbb67c54c8cb6f752d52b677
       vertices: []
       indices: 
       edges: []
@@ -112,8 +112,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 356
-        y: 208
-        width: 752
+        y: 209
+        width: 753
         height: 617
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -122,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0291026926377974d9fcb9c7efd37c44
+      spriteID: 916451441d7c89f46a2af60d3eea169a
       vertices: []
       indices: 
       edges: []
@@ -131,10 +131,10 @@ TextureImporter:
       name: Last-Warrior-Player-Attack_2
       rect:
         serializedVersion: 2
-        x: 1095
-        y: 210
-        width: 354
-        height: 386
+        x: 1173
+        y: 213
+        width: 356
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7a2199b66cbf7e4fae520e05d046aaf
+      spriteID: d8e0db2f19ec69b49913ed3cb59810f0
       vertices: []
       indices: 
       edges: []
@@ -151,10 +151,10 @@ TextureImporter:
       name: Last-Warrior-Player-Attack_3
       rect:
         serializedVersion: 2
-        x: 1656
-        y: 210
-        width: 308
-        height: 447
+        x: 1735
+        y: 213
+        width: 309
+        height: 449
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df6d828b0535e2748b45cc98567fc65e
+      spriteID: 4a1239ddf6c3c5f40abb16efc4ad731a
       vertices: []
       indices: 
       edges: []
