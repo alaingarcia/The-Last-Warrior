@@ -15,6 +15,7 @@ public class TextTips : MonoBehaviour
     int i;
 
     bool done;
+    public bool killAllEnemies;
 
 
     // Start is called before the first frame update
@@ -27,19 +28,42 @@ public class TextTips : MonoBehaviour
         textList1.Add("Click to attack.");
         textList1.Add("Now, press Left Shift to slow things down.");
         textList1.Add("You are ready. Move rightwards and fight!");
+        textList1.Add("You must defeat all enemies.");
         i = 0;
         done = false;
+        killAllEnemies = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (done)
-            return;
+        {
+            if(killAllEnemies && text.color.a <= 0)
+            {
+                text.text = textList1[3];
+                StartCoroutine(TextFadeIn());
+            }
+            else if (killAllEnemies && text.color.a >= 0.9)
+            {
+                if (text.text != textList1[3])
+                    text.text = textList1[3];
+                if (Input.anyKeyDown)
+                {
+                    StartCoroutine(TextFadeOut());
+                    killAllEnemies = false;
+                }
+            }
+            else
+                return;
+        }
 
         if (string.Equals(currentLevel, "FirstLevel"))
         {
-            if (text.color.a <= 0)
+            if (killAllEnemies)
+                done = true;
+            
+            else if (text.color.a <= 0)
             {
                 text.text = textList1[i];
                 StartCoroutine(TextFadeIn());

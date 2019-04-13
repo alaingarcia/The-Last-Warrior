@@ -28,8 +28,15 @@ public class LevelChange : MonoBehaviour
         TransitionTo("SecondLevel");
     }
 
+    // for transition cube
     public void OnTriggerEnter()
     {
-        TransitionTo(SceneName);
+        if (!GameObject.FindWithTag("Enemy"))
+            TransitionTo(SceneName);
+        else
+        {
+            TextTips text = GameObject.FindWithTag("Player").GetComponent<TextTips>();
+            text.killAllEnemies = true;
+        }
     }
 }
