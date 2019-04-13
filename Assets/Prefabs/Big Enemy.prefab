@@ -275,10 +275,11 @@ GameObject:
   - component: {fileID: 3263457710275628663}
   - component: {fileID: 485031480046583898}
   - component: {fileID: 5598694369254981546}
-  - component: {fileID: 4820169765590952715}
   - component: {fileID: 5926113498325068886}
   - component: {fileID: 7177533146742843435}
   - component: {fileID: 8105783566554550383}
+  - component: {fileID: 2196805251027193166}
+  - component: {fileID: 828301067984438844}
   m_Layer: 0
   m_Name: Big Enemy
   m_TagString: Enemy
@@ -329,8 +330,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9634995, y: 10.003199, z: 1}
-  m_Center: {x: 0.71949273, y: -0.0000017881393, z: 0}
+  m_Size: {x: 4, y: 6, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &485031480046583898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -394,22 +395,6 @@ MonoBehaviour:
   startSpeed: 3
   speed: 2
   jumpForce: 4.5
---- !u!114 &4820169765590952715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4878316024991778932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6710dfd5704e74f8310542898e2136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followDistance: 0
-  jumpCooldown: 2
-  minDist: 3
-  jumpWait: 2
 --- !u!114 &5926113498325068886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +444,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2196805251027193166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878316024991778932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4a2d275092d6241b9585c9a7e9d78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followDistance: 7
+  attackDistance: 1
+  flockDistance: 0.4
+--- !u!114 &828301067984438844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878316024991778932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: c38297a23dea81943a13638794c809d6, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!1 &5270897148657250075
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,4 +539,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  attackTimeDuration: 0
+  attackTimeDuration: 0.25
+  swoosh: {fileID: 0}
