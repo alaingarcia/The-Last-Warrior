@@ -17,6 +17,8 @@ TagManager:
   - GameOver
   - Text
   - Wind
+  - TagLight
+  - Video
   layers:
   - Default
   - TransparentFX
