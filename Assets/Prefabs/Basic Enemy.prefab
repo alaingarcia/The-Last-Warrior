@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1276860592}
   - component: {fileID: 1276860591}
   - component: {fileID: 1276860590}
-  - component: {fileID: 1276860589}
   - component: {fileID: 1276860588}
   - component: {fileID: 1276860587}
   - component: {fileID: 6494869261339704701}
@@ -133,22 +132,6 @@ MonoBehaviour:
   startSpeed: 2
   speed: 2
   jumpForce: 4.5
---- !u!114 &1276860589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276860585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6710dfd5704e74f8310542898e2136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followDistance: 0
-  jumpCooldown: 2
-  minDist: 3
-  jumpWait: 2
 --- !u!114 &1276860588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0.5
   attackTimeDuration: 0.25
+  swoosh: {fileID: 0}
 --- !u!1 &1531418172
 GameObject:
   m_ObjectHideFlags: 0
