@@ -93,8 +93,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 219
-        width: 476
-        height: 567
+        width: 419
+        height: 562
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361da747d2508864a9d15e117719f2d2
+      spriteID: 1a5af08d5e3d1374bbd6d2f16689c1fc
       vertices: []
       indices: 
       edges: []
@@ -111,27 +111,7 @@ TextureImporter:
       name: Last-Warrior-Punch-enemy-attack_1
       rect:
         serializedVersion: 2
-        x: 557
-        y: 219
-        width: 419
-        height: 561
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f40021d2544b86e478c2e58bdd509a67
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Last-Warrior-Punch-enemy-attack_2
-      rect:
-        serializedVersion: 2
-        x: 1113
+        x: 458
         y: 219
         width: 429
         height: 558
@@ -142,7 +122,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc3dd9743ed52a04684d15aefaa6329c
+      spriteID: 1212d08a289374745824fa79aaba695e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Last-Warrior-Punch-enemy-attack_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 219
+        width: 419
+        height: 561
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e111246d494c746af1c4a054e642db
       vertices: []
       indices: 
       edges: []
@@ -151,10 +151,10 @@ TextureImporter:
       name: Last-Warrior-Punch-enemy-attack_3
       rect:
         serializedVersion: 2
-        x: 1581
+        x: 1524
         y: 219
-        width: 419
-        height: 562
+        width: 476
+        height: 567
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e021fb6ca79b64479ab5664b823e397
+      spriteID: 71cf4c87ce4ee2d49996f34c0489045b
       vertices: []
       indices: 
       edges: []
