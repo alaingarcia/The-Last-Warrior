@@ -44,7 +44,8 @@ public class SlowdownAbility : MonoBehaviour
         slowBar = GameObject.FindWithTag("SlowBar").GetComponent<Image>();
         slowCooldownCurrent = slowCooldownStart;
 
-        wind = GameObject.FindWithTag("Wind").GetComponent<WindZone>();
+        if (GameObject.FindWithTag("Wind"))
+            wind = GameObject.FindWithTag("Wind").GetComponent<WindZone>();
     }
 
     void Update()

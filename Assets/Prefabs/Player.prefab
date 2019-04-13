@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 1380933098329460555}
   m_Layer: 5
   m_Name: SlowBarMask
-  m_TagString: SlowBar
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 4578607336747754172}
   m_Layer: 5
   m_Name: HealthBarMask
-  m_TagString: HealthBar
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
