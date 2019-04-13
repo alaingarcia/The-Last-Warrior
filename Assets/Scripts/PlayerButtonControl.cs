@@ -17,11 +17,9 @@ public class PlayerButtonControl : MonoBehaviour
     private SlowdownAbility slowdownScript;
     private MeleeAttack attackScript;
 
-    public AudioSource swoosh;
     void Start() 
     {
         // sets script values
-        swoosh = GameObject.FindWithTag("Swoosh").GetComponent<AudioSource>();
         movementScript = gameObject.GetComponent<Movement>();
         slowdownScript = gameObject.GetComponent<SlowdownAbility>();
         attackScript = gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>();
@@ -55,12 +53,8 @@ public class PlayerButtonControl : MonoBehaviour
         }
 
         if (Input.GetKeyDown(attackKey))
-        {
-             
-            
-            swoosh.Play();
+        { 
             attackScript.Attack();
-
         }
     }
 }

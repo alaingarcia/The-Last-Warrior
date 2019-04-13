@@ -14,11 +14,14 @@ public class MeleeAttack : MonoBehaviour
     private bool attacking = false;
     private float attackTimer = 0;
 
+    public AudioSource swoosh;
+
     // Start is called before the first frame update
     void Start()
     {
         WeaponHitBox = gameObject.GetComponent<Collider>();
         animator = gameObject.transform.parent.GetComponent<Animator>();
+        swoosh = GameObject.FindWithTag("Swoosh").GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -73,6 +76,7 @@ public class MeleeAttack : MonoBehaviour
         {
             attacking = true;
             attackTimer = attackTimeDuration;
+            swoosh.Play();
         }
     }
 }

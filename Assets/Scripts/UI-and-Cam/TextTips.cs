@@ -14,6 +14,8 @@ public class TextTips : MonoBehaviour
     float t;
     int i;
 
+    bool done;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +28,15 @@ public class TextTips : MonoBehaviour
         textList1.Add("Now, press Left Shift to slow things down.");
         textList1.Add("You are ready. Move rightwards and fight!");
         i = 0;
+        done = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (done)
+            return;
+
         if (string.Equals(currentLevel, "FirstLevel"))
         {
             if (text.color.a <= 0)
@@ -62,7 +68,7 @@ public class TextTips : MonoBehaviour
                     if (Input.anyKeyDown)
                     {
                         StartCoroutine(TextFadeOut());
-                        i = i + 1;
+                        done = true;
                     }
                 }
             }
