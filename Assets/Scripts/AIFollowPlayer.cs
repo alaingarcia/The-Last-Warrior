@@ -8,9 +8,6 @@ public class AIFollowPlayer : MonoBehaviour
     private Transform player;
     private Rigidbody body;
 
-    private float right = 1;
-    private float left = -1;
-
     public float followDistance;
 
     // set cooldown for jump to prevent constant jumping

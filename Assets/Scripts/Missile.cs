@@ -8,9 +8,20 @@ public class Missile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            // Don't do damage to yourself
+            if (other.name != "Ranged Enemy")
+            {
+                print("Missile hit " + other.name);
+                other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            }
+        }
+
+        if (other.tag == "Ground")
+        {
+            print("Missle hit the floor. Destroying in 1s");
+            Destroy(gameObject, 1.0f);
         }
     }
 }
