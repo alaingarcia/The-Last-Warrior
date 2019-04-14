@@ -1353,8 +1353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpKey: 32
-  slowKey: 304
+  jumpKeyAlt: 119
+  slowKey: 303
+  slowKeyAlt: 324
   attackKey: 323
+  attackKeyAlt: 304
   pauseKey: 27
 --- !u!114 &6015202345312456498
 MonoBehaviour:

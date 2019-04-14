@@ -51,8 +51,10 @@ public class SlowdownAbility : MonoBehaviour
         slowCooldownCurrent = slowCooldownStart;
 
         if (GameObject.FindWithTag("Wind"))
+        {
             wind = GameObject.FindWithTag("Wind").GetComponent<WindZone>();
             normalWind = wind.windTurbulence;
+        }
     }
 
     void Update()

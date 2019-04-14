@@ -50,7 +50,7 @@ public class PlayerButtonControl : MonoBehaviour
             movementScript.jump();
         }
         
-        if (slowdownScript.slowCooldownCurrent > 1 && && Time.timeScale > 0f)
+        if (slowdownScript.slowCooldownCurrent > 1 && Time.timeScale > 0f)
         {
             if (Input.GetKeyDown(slowKey))
             {
