@@ -27,6 +27,10 @@ public class LevelChange : MonoBehaviour
     {
         TransitionTo("SecondLevel");
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
     // for transition cube
     public void OnTriggerEnter()
