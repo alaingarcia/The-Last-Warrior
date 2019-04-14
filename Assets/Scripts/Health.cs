@@ -49,7 +49,10 @@ public class Health : MonoBehaviour
         if (health <= 0 && !dead)
         { 
             dead = true;
-            audio.Play();
+            if (audio != null)
+            {
+                audio.Play();
+            }
         }
 
         if (health <= 0 )

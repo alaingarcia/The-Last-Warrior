@@ -33,6 +33,8 @@ public class RangeAttack : MonoBehaviour
 
     Transform player;
 
+    AudioSource sound;
+
     void Start()
     {
         // Start cooldown at default value
@@ -46,6 +48,9 @@ public class RangeAttack : MonoBehaviour
 
         // Initialize player
         player = GameObject.FindWithTag("Player").transform;
+
+        // init sound
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -76,7 +81,11 @@ public class RangeAttack : MonoBehaviour
     }
 
     void rangedAttack()
-    {   
+    {
+        // play arrow shooting sound
+        if (sound != null)
+            sound.Play();
+        
         // Instantiate the missile at the beginning of the attack
         missile = Instantiate(missileObjectPrefab, transform.position, transform.rotation);
         missileBody = missile.GetComponent<Rigidbody>();
@@ -90,9 +99,9 @@ public class RangeAttack : MonoBehaviour
             missileBody.GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        Destroy(missile, timeUntilDestroyed);
+        // commented this out because missles are now destroyed when they hit the floor
+        //Destroy(missile, timeUntilDestroyed);
     }
-
 
     // Trajectory functions below thanks to: https://answers.unity.com/questions/1087568/3d-trajectory-prediction.html#answer-1087707
     public static Vector3 HitTargetAtTime(Vector3 startPosition, Vector3 targetPosition, Vector3 gravityBase, float timeToTarget)
