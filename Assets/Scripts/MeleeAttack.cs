@@ -47,9 +47,7 @@ public class MeleeAttack : MonoBehaviour
         {
             // Reduce the attack timer and stop attacking 
             if (attackTimer > 0)
-            {
-                print("Unscaled dt: " + Time.unscaledDeltaTime + ", Scaled dt: " + Time.deltaTime);
-                
+            {                
                 // Don't slow down the player's attack timer when time is slowed down
                 if (gameObject.transform.parent.gameObject.tag == "Player")
                 {
