@@ -29,6 +29,9 @@ public class Movement : MonoBehaviour
     //to see if it is on a grounded object
     private bool isGrounded = false;
 
+    // list of all gameobjects that we're currently colliding with
+    private List<GameObject> currentCollisions = new List<GameObject>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +56,9 @@ public class Movement : MonoBehaviour
             isGrounded = true;
         }
 
+        // add the gameobject to our list of collided gameobjects
+        currentCollisions.Add(col.gameObject);
+
         // Update animations accordingly if we're grounded
         animator.SetBool("Ground", isGrounded);
     }
@@ -63,6 +69,22 @@ public class Movement : MonoBehaviour
         if (col.gameObject.tag == "Ground" || col.collider.gameObject.tag == "Enemy")
         {
             isGrounded = false;
+        }
+
+        // remove the gameobject from our list of gameobjects we're currently colliding with
+        currentCollisions.Remove(col.gameObject);
+
+        // check to see if there is another gameobject that we're still touching that counts as ground
+        // if so, we are still grounded
+        foreach(GameObject g in currentCollisions)
+        {
+            if (g == null)
+                continue;
+
+            if (g.tag == "Ground" || g.tag == "Enemy")
+            {
+                isGrounded = true;
+            }
         }
 
         // Update animations accordingly if we're grounded
