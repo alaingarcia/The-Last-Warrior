@@ -44,25 +44,29 @@ public class PlayerButtonControl : MonoBehaviour
 
         movementScript.move(horizontal, vertical);
 
-        // if jump button is pressed, call jump from the movement script
-        if ((Input.GetKeyDown(jumpKey) || Input.GetKeyDown(jumpKeyAlt)) && Time.timeScale > 0f)
+        // check for pause
+        if (Time.timeScale > 0f)
         {
-            movementScript.jump();
-        }
-        
-        if (slowdownScript.slowCooldownCurrent > 1 && Time.timeScale > 0f)
-        {
-            if (Input.GetKeyDown(slowKey))
+            // if jump button is pressed, call jump from the movement script
+            if ((Input.GetKeyDown(jumpKey) || Input.GetKeyDown(jumpKeyAlt)))
             {
-              slowdownScript.slowdown();
+                movementScript.jump();
             }
+            
+            if (slowdownScript.slowCooldownCurrent > 1)
+            {
+                if (Input.GetKeyDown(slowKey))
+                {
+                slowdownScript.slowdown();
+                }
+            }
+
+            if ((Input.GetKeyUp(slowKey) || Input.GetKeyUp(slowKeyAlt))|| slowdownScript.slowCooldownCurrent < 1)
+                slowdownScript.normalSpeed();
+
+            if ((Input.GetKeyDown(attackKey) || Input.GetKeyDown(attackKeyAlt)))
+                attackScript.Attack();
         }
-
-        if ((Input.GetKeyUp(slowKey) || Input.GetKeyUp(slowKeyAlt))|| slowdownScript.slowCooldownCurrent < 1)
-            slowdownScript.normalSpeed();
-
-        if ((Input.GetKeyDown(attackKey) || Input.GetKeyDown(attackKeyAlt)) && Time.timeScale > 0f)
-            attackScript.Attack();
 
         if (Input.GetKeyDown(pauseKey))
         {
