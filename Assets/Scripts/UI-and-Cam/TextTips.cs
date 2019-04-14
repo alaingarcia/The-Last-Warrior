@@ -25,8 +25,10 @@ public class TextTips : MonoBehaviour
         
         text = GameObject.FindWithTag("Text").GetComponent<Text>();
         t = 1;
-        textList1.Add("Click to attack.");
-        textList1.Add("Now, press Left Shift to slow things down.");
+        textList1.Add("Use W (or Space) to jump.");
+        textList1.Add("Use A and D (or Left Arrow and Right Arrow) to move.");
+        textList1.Add("Use Left Shift (or Left Click) to attack.");
+        textList1.Add("Now, use Right Shift (or Right Click) to slow things down.");
         textList1.Add("You are ready. Move rightwards and fight!");
         textList1.Add("You must defeat all enemies.");
         i = 0;
@@ -41,13 +43,13 @@ public class TextTips : MonoBehaviour
         {
             if(killAllEnemies && text.color.a <= 0)
             {
-                text.text = textList1[3];
+                text.text = textList1[4];
                 StartCoroutine(TextFadeIn());
             }
             else if (killAllEnemies && text.color.a >= 0.9)
             {
-                if (text.text != textList1[3])
-                    text.text = textList1[3];
+                if (text.text != textList1[5])
+                    text.text = textList1[5];
                 if (Input.anyKeyDown)
                 {
                     StartCoroutine(TextFadeOut());
@@ -73,7 +75,7 @@ public class TextTips : MonoBehaviour
             {
                 if (i == 0)
                 {
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
                     {
                         StartCoroutine(TextFadeOut());
                         i = i + 1;
@@ -81,13 +83,29 @@ public class TextTips : MonoBehaviour
                 }
                 else if (i == 1)
                 {
-                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    if ( Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         StartCoroutine(TextFadeOut());
                         i = i + 1;
                     }
                 }
                 else if (i == 2)
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        StartCoroutine(TextFadeOut());
+                        i = i + 1;
+                    }
+                }
+                else if (i == 3)
+                {
+                    if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.Mouse1))
+                    {
+                        StartCoroutine(TextFadeOut());
+                        i = i + 1;
+                    }
+                }
+                else if (i == 4)
                 {
                     if (Input.anyKeyDown)
                     {
