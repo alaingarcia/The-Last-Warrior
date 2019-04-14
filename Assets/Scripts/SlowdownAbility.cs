@@ -113,8 +113,7 @@ public class SlowdownAbility : MonoBehaviour
         blackBars.cinematicShow(100, 0.2f);
 
         //AUDIO
-        audio.pitch = 0.8f;
-        
+        audio.pitch = 0.8f; 
 
         cooldownRestore(false);
 
@@ -126,16 +125,25 @@ public class SlowdownAbility : MonoBehaviour
     public void normalSpeed()
     {
         // ENEMY NORMAL SPEED
-        foreach(GameObject enemy in enemies)
+        if (enemies != null)
         {
-            if (enemy && enemy.GetComponent<Movement>().speed != enemy.GetComponent<Movement>().startSpeed)
-                enemy.GetComponent<Movement>().speed /= enemySlowdownMultiplier;
+            foreach (GameObject enemy in enemies)
+            {
+                if (enemy == null)
+                    continue;
+
+                if (enemy.GetComponent<Movement>().speed != enemy.GetComponent<Movement>().startSpeed)
+                    enemy.GetComponent<Movement>().speed /= enemySlowdownMultiplier;
+            }
         }
 
-        foreach (GameObject missile in missiles)
+        if (missiles != null)
         {
-            if (missile)
-                missile.GetComponent<Rigidbody>().velocity /= enemySlowdownMultiplier;
+            foreach (GameObject missile in missiles)
+            {
+                if (missile)
+                    missile.GetComponent<Rigidbody>().velocity /= enemySlowdownMultiplier;
+            }
         }
 
         // PLAYER NORMAL SPEED

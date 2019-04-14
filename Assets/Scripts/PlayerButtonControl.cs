@@ -55,9 +55,9 @@ public class PlayerButtonControl : MonoBehaviour
             
             if (slowdownScript.slowCooldownCurrent > 1)
             {
-                if (Input.GetKeyDown(slowKey))
+                if (Input.GetKeyDown(slowKey) || Input.GetKeyDown(slowKeyAlt))
                 {
-                slowdownScript.slowdown();
+                    slowdownScript.slowdown();
                 }
             }
 

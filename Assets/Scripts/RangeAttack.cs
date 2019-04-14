@@ -99,6 +99,8 @@ public class RangeAttack : MonoBehaviour
             missileBody.GetComponent<SpriteRenderer>().flipX = true;
         }
 
+        missile.transform.forward = Vector3.Slerp(missile.transform.forward, missileBody.velocity.normalized, Time.deltaTime);
+
         // commented this out because missles are now destroyed when they hit the floor
         //Destroy(missile, timeUntilDestroyed);
     }
