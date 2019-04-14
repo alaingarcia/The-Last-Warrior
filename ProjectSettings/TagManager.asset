@@ -20,6 +20,7 @@ TagManager:
   - TagLight
   - Video
   - Pause
+  - Instructions
   layers:
   - Default
   - TransparentFX

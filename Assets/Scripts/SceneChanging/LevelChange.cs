@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
     public string SceneName;
+    public Instructions instructions;
 
     public void TransitionTo(string levelName)
     {
@@ -17,7 +18,7 @@ public class LevelChange : MonoBehaviour
     }
     public void LoadInstructions()
     {
-        TransitionTo("Instructions");
+        instructions.Show();
     }
     public void LoadFirstLevel()
     {

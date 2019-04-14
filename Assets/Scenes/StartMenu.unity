@@ -1073,6 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: 
+  instructions: {fileID: 0}
 --- !u!1 &1489451970
 GameObject:
   m_ObjectHideFlags: 0
