@@ -55,11 +55,14 @@ public class Health : MonoBehaviour
             dead = true;
             if (deathNoise != null)
             {
+
                 deathNoise.Play();
             }
             if (mainMusic !=null)
             {
-                mainMusic.Pause();
+                if (gameObject.tag == "Player"){
+                    mainMusic.Pause();
+                }
             }
         }
 
