@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4a2d275092d6241b9585c9a7e9d78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followDistance: 7
+  followDistance: 6
   attackDistance: 1
   flockDistance: 0.4
 --- !u!114 &828301067984438844
@@ -524,7 +524,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.836274, y: 5.357905, z: 4}
+  m_Size: {x: 5.67, y: 5.357905, z: 4}
   m_Center: {x: 0.83, y: -0.19, z: 0}
 --- !u!114 &3511605752461635868
 MonoBehaviour:
@@ -538,6 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d6620d91050d44291490bc420a282e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
   attackTimeDuration: 0.25
   swoosh: {fileID: 0}

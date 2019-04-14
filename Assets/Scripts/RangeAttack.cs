@@ -13,6 +13,8 @@ public class RangeAttack : MonoBehaviour
     // Time it takes to hit the player (in seconds)
     // Default 1 second
     public float timeToHit = 1;
+
+    public float attackDistance = 5;
     
     //Time it takes for the missile to be destroyed
     public float timeUntilDestroyed = 3;
@@ -29,6 +31,8 @@ public class RangeAttack : MonoBehaviour
     public float defaultCooldown = 3;
     private float currentCooldown;
 
+    Transform player;
+
     void Start()
     {
         // Start cooldown at default value
@@ -39,6 +43,9 @@ public class RangeAttack : MonoBehaviour
 
         // Initialize movement script
         movementScript = gameObject.GetComponent<Movement>();
+
+        // Initialize player
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
@@ -47,7 +54,7 @@ public class RangeAttack : MonoBehaviour
         currentCooldown -= Time.deltaTime;
         
         // Applies cooldown
-        if (currentCooldown <= 0)
+        if (currentCooldown <= 0 && Vector2.Distance(transform.position, player.position) < attackDistance)
         {
             rangedAttack();
 

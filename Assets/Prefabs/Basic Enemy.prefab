@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1276860588}
   - component: {fileID: 1276860587}
   - component: {fileID: 6494869261339704701}
+  - component: {fileID: 1433050872}
+  - component: {fileID: 1433050875}
   m_Layer: 0
   m_Name: Basic Enemy
   m_TagString: Enemy
@@ -181,6 +183,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1433050872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276860585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4a2d275092d6241b9585c9a7e9d78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followDistance: 4
+  attackDistance: 0.5
+  flockDistance: 0.3
+--- !u!114 &1433050875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276860585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: c38297a23dea81943a13638794c809d6, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 0
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!1 &1395098280
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d6620d91050d44291490bc420a282e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.5
+  damage: 5
   attackTimeDuration: 0.25
   swoosh: {fileID: 0}
 --- !u!1 &1531418172
@@ -425,7 +464,7 @@ GameObject:
   - component: {fileID: 212216623551166647}
   - component: {fileID: 3478945403117997769}
   m_Layer: 0
-  m_Name: OOF
+  m_Name: Dissapear
   m_TagString: sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,15 +494,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d3f0f7e89da024e188d81078b933b9ed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 94280f809ce27400883b08e80e5d7243, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.21
-  m_Pitch: 1
+  m_Volume: 0.79
+  m_Pitch: 1.96
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 114
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -501,7 +540,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
