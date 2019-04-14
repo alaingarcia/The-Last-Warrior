@@ -18,11 +18,6 @@ public class RangeAttack : MonoBehaviour
     
     //Time it takes for the missile to be destroyed
     public float timeUntilDestroyed = 3;
-
-    // movement variables
-    private Movement movementScript;
-    private float left = -1;
-    private float right = 1;
     
     // target variables
     private Transform target;
@@ -43,9 +38,6 @@ public class RangeAttack : MonoBehaviour
         // Initialize target (default will be player)
         target = GameObject.FindWithTag("Player").transform;
 
-        // Initialize movement script
-        movementScript = gameObject.GetComponent<Movement>();
-
         // Initialize player
         player = GameObject.FindWithTag("Player").transform;
 
@@ -65,18 +57,6 @@ public class RangeAttack : MonoBehaviour
 
             // After ranged attack, reset cooldown
             currentCooldown = defaultCooldown;
-        }
-
-        // If target is to the left, move left
-        if (target.position.x < transform.position.x)
-        {
-            movementScript.move(left, 0);
-        }
-
-        // If target is to the right, move right
-        else
-        {
-            movementScript.move(right, 0);
         }
     }
 
