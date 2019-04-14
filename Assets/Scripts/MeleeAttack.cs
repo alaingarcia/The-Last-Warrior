@@ -45,16 +45,6 @@ public class MeleeAttack : MonoBehaviour
         // If the attack animation is playing, deal damage to anything hit by our attack animation
         if (attacking)
         {
-            foreach (GameObject target in targets)
-            {
-                if (target)
-                {
-                    // Confirm that our target has health before we try to deal damage to it
-                    if (target.GetComponent<Health>() != null)
-                        target.GetComponent<Health>().TakeDamage(damage);
-                }
-            }
-
             // Reduce the attack timer and stop attacking 
             if (attackTimer > 0)
             {
@@ -76,6 +66,16 @@ public class MeleeAttack : MonoBehaviour
         {
             attacking = true;
             attackTimer = attackTimeDuration;
+
+            foreach (GameObject target in targets)
+            {
+                if (target)
+                {
+                    // Confirm that our target has health before we try to deal damage to it
+                    if (target.GetComponent<Health>() != null)
+                        target.GetComponent<Health>().TakeDamage(damage);
+                }
+            }
 
             if (gameObject.transform.parent.gameObject.tag == "Player")
                 swoosh.Play();
