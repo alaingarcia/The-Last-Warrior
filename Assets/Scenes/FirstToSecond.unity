@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -543,6 +543,80 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1173061187}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1063219363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1888435290053111056, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.2721405
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3648708
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1290178
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111086, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888435290053111057, guid: c70a51c9dd208b14581476ee443c5303,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d045ab35e90ff943b3138032b3f1758, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c70a51c9dd208b14581476ee443c5303, type: 3}
 --- !u!1001 &1173061187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -620,6 +694,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7075572425463669679, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298900296596991071, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: m_TargetDisplay
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: swoosh
@@ -640,20 +724,10 @@ PrefabInstance:
       propertyPath: showHealth
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7075572425463669679, guid: 27fa7479b764c9a46b8f3befd5f57732,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2228154386554101583, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298900296596991071, guid: 27fa7479b764c9a46b8f3befd5f57732,
-        type: 3}
-      propertyPath: m_TargetDisplay
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3242983876163160820, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
