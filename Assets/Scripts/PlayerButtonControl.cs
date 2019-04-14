@@ -11,11 +11,13 @@ public class PlayerButtonControl : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode slowKey = KeyCode.LeftShift;
     public KeyCode attackKey = KeyCode.Mouse0;
+    public KeyCode pauseKey = KeyCode.Escape;
 
     // gets the components of the gameObject to call functions
     private Movement movementScript;
     private SlowdownAbility slowdownScript;
     private MeleeAttack attackScript;
+    private GameObject pauseScreen;
 
     void Start() 
     {
@@ -23,6 +25,9 @@ public class PlayerButtonControl : MonoBehaviour
         movementScript = gameObject.GetComponent<Movement>();
         slowdownScript = gameObject.GetComponent<SlowdownAbility>();
         attackScript = gameObject.transform.Find("WeaponHitBox").GetComponent<MeleeAttack>();
+        
+        pauseScreen = GameObject.FindWithTag("Pause");
+        pauseScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,13 +53,18 @@ public class PlayerButtonControl : MonoBehaviour
         }
 
         if (Input.GetKeyUp(slowKey) || slowdownScript.slowCooldownCurrent < 1)
-        {
             slowdownScript.normalSpeed();
-        }
 
         if (Input.GetKeyDown(attackKey))
-        { 
             attackScript.Attack();
+
+        if (Input.GetKeyDown(pauseKey))
+        {
+            pauseScreen.SetActive(!pauseScreen.activeSelf);
+            if (pauseScreen.activeSelf)
+                Time.timeScale = 0f;
+            else
+                Time.timeScale = 1f;
         }
     }
 }

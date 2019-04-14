@@ -19,6 +19,7 @@ TagManager:
   - Wind
   - TagLight
   - Video
+  - Pause
   layers:
   - Default
   - TransparentFX
