@@ -20,7 +20,8 @@ public class Health : MonoBehaviour
     string currentLevel;
 
     //Sound
-    public AudioSource audio;
+    public AudioSource deathNoise;
+    public AudioSource mainMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,10 @@ public class Health : MonoBehaviour
         health = startingHealth;
 
         //Get oof sound
-        audio = GameObject.FindWithTag("sound").GetComponent<AudioSource>();
+        deathNoise = GameObject.FindWithTag("sound").GetComponent<AudioSource>();
+
+        //Get mainMusic sound
+        mainMusic = GameObject.FindWithTag("MainMusic").GetComponent<AudioSource>();
 
         healthBar = gameObject.transform.Find("StatCanvas/HealthBarMask/HealthBar").GetComponent<Image>();
         
@@ -49,9 +53,13 @@ public class Health : MonoBehaviour
         if (health <= 0 && !dead)
         { 
             dead = true;
-            if (audio != null)
+            if (deathNoise != null)
             {
-                audio.Play();
+                deathNoise.Play();
+            }
+            if (mainMusic !=null)
+            {
+                mainMusic.Pause();
             }
         }
 
