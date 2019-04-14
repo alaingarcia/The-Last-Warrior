@@ -23,7 +23,7 @@ public class SlowdownAbility : MonoBehaviour
     private BlackBars blackBars;
 
     private WindZone wind;
-
+    private float normalWind;
     //Audio
     public AudioSource audio;
     // used for the slowdown cooldown
@@ -33,6 +33,8 @@ public class SlowdownAbility : MonoBehaviour
     private bool slowCooldownRestore = true;
     public float cooldownWasteRate = 30;
     public float cooldownRestoreRate = 10;
+
+
     
     void Start()
     {
@@ -50,6 +52,7 @@ public class SlowdownAbility : MonoBehaviour
 
         if (GameObject.FindWithTag("Wind"))
             wind = GameObject.FindWithTag("Wind").GetComponent<WindZone>();
+            normalWind = wind.windTurbulence;
     }
 
     void Update()
@@ -114,7 +117,7 @@ public class SlowdownAbility : MonoBehaviour
         cooldownRestore(false);
 
         if (wind)
-            wind.windTurbulence = wind.windTurbulence/2;
+            wind.windTurbulence = normalWind/2;
     }
 
     // Function to revert speeds back to normal
@@ -143,7 +146,7 @@ public class SlowdownAbility : MonoBehaviour
         cooldownRestore(true);
 
         if (wind)
-            wind.windTurbulence = wind.windTurbulence*2;
+            wind.windTurbulence = normalWind;
     }
 
     void cooldownRestore(bool restore)
