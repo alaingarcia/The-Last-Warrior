@@ -11,7 +11,7 @@ public class PlayerButtonControl : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode jumpKeyAlt = KeyCode.W;
 
-    public KeyCode slowKey = KeyCode.RightShift;
+    public KeyCode slowKey = KeyCode.Return;
     public KeyCode slowKeyAlt = KeyCode.Mouse1;
 
     public KeyCode attackKey = KeyCode.Mouse0;

@@ -28,7 +28,7 @@ public class TextTips : MonoBehaviour
         textList1.Add("Use W (or Space) to jump.");
         textList1.Add("Use A and D (or Left Arrow and Right Arrow) to move.");
         textList1.Add("Use Left Shift (or Left Click) to attack.");
-        textList1.Add("Now, use Right Shift (or Right Click) to slow things down.");
+        textList1.Add("Now, use Enter (or Right Click) to slow things down.");
         textList1.Add("You are ready. Move rightwards and fight!");
         textList1.Add("You must defeat all enemies.");
         i = 0;
@@ -99,7 +99,7 @@ public class TextTips : MonoBehaviour
                 }
                 else if (i == 3)
                 {
-                    if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.Mouse1))
+                    if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse1))
                     {
                         StartCoroutine(TextFadeOut());
                         i = i + 1;

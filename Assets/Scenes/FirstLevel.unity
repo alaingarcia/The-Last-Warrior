@@ -899,6 +899,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: slowKey
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fa7479b764c9a46b8f3befd5f57732, type: 3}
 --- !u!1001 &228080941
@@ -3802,6 +3807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: FirstToSecond
+  instructions: {fileID: 0}
 --- !u!1001 &1231186829
 PrefabInstance:
   m_ObjectHideFlags: 0

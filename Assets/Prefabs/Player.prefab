@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpKey: 32
   jumpKeyAlt: 119
-  slowKey: 303
+  slowKey: 13
   slowKeyAlt: 324
   attackKey: 323
   attackKeyAlt: 304
@@ -1504,6 +1504,7 @@ MonoBehaviour:
   startingHealth: 100
   showHealth: 1
   dead: 0
+  damageTakenICD: 0.3
   deathNoise: {fileID: 0}
   mainMusic: {fileID: 0}
 --- !u!108 &2838968583712504895
