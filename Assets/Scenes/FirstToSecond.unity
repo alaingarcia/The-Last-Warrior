@@ -326,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 215716917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 10, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -694,6 +694,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: swoosh
+      value: 
+      objectReference: {fileID: 197534121}
     - target: {fileID: 6298900296596991071, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: m_TargetDisplay
@@ -704,11 +709,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
-        type: 3}
-      propertyPath: swoosh
-      value: 
-      objectReference: {fileID: 197534121}
     - target: {fileID: 6015202345312456497, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: showBar
@@ -842,7 +842,7 @@ Transform:
   m_GameObject: {fileID: 1188594262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 10, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4

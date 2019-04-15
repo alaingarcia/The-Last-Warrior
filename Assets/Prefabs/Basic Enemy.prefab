@@ -150,7 +150,9 @@ MonoBehaviour:
   startingHealth: 100
   showHealth: 1
   dead: 0
-  audio: {fileID: 3478945403117997769}
+  damageTakenICD: 0.3
+  deathNoise: {fileID: 3478945403117997769}
+  mainMusic: {fileID: 0}
 --- !u!114 &1276860587
 MonoBehaviour:
   m_ObjectHideFlags: 0
