@@ -304,8 +304,7 @@ MonoBehaviour:
   missileObjectPrefab: {fileID: 6871175222781989027, guid: 8f62e102263d03a4fa1ee998cb8fd65a,
     type: 3}
   missileDamage: 7
-  timeToHit: 0.7
-  attackDistance: 25
+  attackDistance: 20
   timeUntilDestroyed: 3
   defaultCooldown: 3
 --- !u!114 &2643433783363122735
