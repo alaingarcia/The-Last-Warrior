@@ -26,8 +26,13 @@ public class End : MonoBehaviour
         
         else if (Input.anyKeyDown)
         {
-            video.SetActive(true);
-            played = true;
+            Invoke("PlayVideo", 2f);
         }
+    }
+
+    void PlayVideo()
+    {
+        video.SetActive(true);
+        played = true;
     }
 }
