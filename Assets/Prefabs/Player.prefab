@@ -1505,7 +1505,7 @@ MonoBehaviour:
   showHealth: 1
   dead: 0
   damageTakenICD: 0.3
-  deathNoise: {fileID: 0}
+  deathNoise: {fileID: 1036202151316786513}
   mainMusic: {fileID: 0}
 --- !u!108 &2838968583712504895
 Light:
@@ -2324,15 +2324,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34465436dc0e4ee49ae96f39b254cd95, type: 3}
---- !u!224 &5859271585385871760 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7490610330832053625, guid: 34465436dc0e4ee49ae96f39b254cd95,
-    type: 3}
-  m_PrefabInstance: {fileID: 3937181943684881641}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4195355563559061776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 908402995321820665, guid: 34465436dc0e4ee49ae96f39b254cd95,
+    type: 3}
+  m_PrefabInstance: {fileID: 3937181943684881641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5859271585385871760 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7490610330832053625, guid: 34465436dc0e4ee49ae96f39b254cd95,
     type: 3}
   m_PrefabInstance: {fileID: 3937181943684881641}
   m_PrefabAsset: {fileID: 0}
