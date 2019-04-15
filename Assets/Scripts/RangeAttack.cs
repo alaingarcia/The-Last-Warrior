@@ -10,10 +10,6 @@ public class RangeAttack : MonoBehaviour
     private Rigidbody missileBody;
     public float missileDamage = 5;
 
-    // Time it takes to hit the player (in seconds)
-    // Default 1 second
-    public float timeToHit = 1;
-
     public float attackDistance = 5;
     
     //Time it takes for the missile to be destroyed
@@ -69,7 +65,10 @@ public class RangeAttack : MonoBehaviour
         // Instantiate the missile at the beginning of the attack
         missile = Instantiate(missileObjectPrefab, transform.position, transform.rotation);
         missileBody = missile.GetComponent<Rigidbody>();
-        
+
+        // Time it takes to hit the player (in seconds)
+        float timeToHit = Vector2.Distance(transform.position, target.position) / 6.0f;
+
         // Set missile velocity using the trajectory script
         missileBody.velocity = HitTargetAtTime(transform.position, target.position, new Vector3(0f, -9.81f, 0f), timeToHit);
         
