@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,6 +186,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b584d3373012133458cd2cae5f05cdbe,
     type: 3}
   m_PrefabInstance: {fileID: 1800474401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &74376193 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3289789743099132560, guid: ad0d07485d8b9104e86ac61727540844,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461962483}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &78910266
 GameObject:
@@ -562,6 +568,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8760d4bd10d819440b2335debf5b14fa,
     type: 3}
   m_PrefabInstance: {fileID: 968257224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &328687542 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3289789743099132560, guid: ad0d07485d8b9104e86ac61727540844,
+    type: 3}
+  m_PrefabInstance: {fileID: 1299363644}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &360009610
 GameObject:
@@ -2139,6 +2151,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.001, y: 1, z: 1}
   m_Center: {x: -1, y: 0.7, z: 0}
+--- !u!82 &1262351538 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2041906877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1299363644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2204,6 +2222,16 @@ PrefabInstance:
     - target: {fileID: 5642107730939564089, guid: ad0d07485d8b9104e86ac61727540844,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926113498325068886, guid: ad0d07485d8b9104e86ac61727540844,
+        type: 3}
+      propertyPath: deathNoise
+      value: 
+      objectReference: {fileID: 328687542}
+    - target: {fileID: 5926113498325068886, guid: ad0d07485d8b9104e86ac61727540844,
+        type: 3}
+      propertyPath: dead
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2386,6 +2414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289789743099132560, guid: ad0d07485d8b9104e86ac61727540844,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad0d07485d8b9104e86ac61727540844, type: 3}
@@ -2745,6 +2778,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5926113498325068886, guid: ad0d07485d8b9104e86ac61727540844,
+        type: 3}
+      propertyPath: deathNoise
+      value: 
+      objectReference: {fileID: 74376193}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad0d07485d8b9104e86ac61727540844, type: 3}
 --- !u!1001 &1466622267
@@ -2927,6 +2965,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1461962483}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1592348055 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3289789743099132560, guid: ad0d07485d8b9104e86ac61727540844,
+    type: 3}
+  m_PrefabInstance: {fileID: 1637888266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1637888266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3009,6 +3053,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5926113498325068886, guid: ad0d07485d8b9104e86ac61727540844,
+        type: 3}
+      propertyPath: deathNoise
+      value: 
+      objectReference: {fileID: 1592348055}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad0d07485d8b9104e86ac61727540844, type: 3}
 --- !u!4 &1714629145 stripped
@@ -3127,6 +3176,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850319890836105564, guid: f5a4a78928f742449abe3bbfedd66ca1,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850319890836105564, guid: f5a4a78928f742449abe3bbfedd66ca1,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a4a78928f742449abe3bbfedd66ca1, type: 3}
@@ -3248,6 +3307,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 48ca5db920e5c479a95e4c1e62724463, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b584d3373012133458cd2cae5f05cdbe, type: 3}
+--- !u!82 &1815322638 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1912424751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888106800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,6 +3429,15 @@ PrefabInstance:
     - target: {fileID: 1276860594, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276860588, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
+      propertyPath: deathNoise
+      value: 
+      objectReference: {fileID: 1815322638}
+    - target: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
@@ -3767,6 +3841,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1276860588, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
+      propertyPath: deathNoise
+      value: 
+      objectReference: {fileID: 1262351538}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94266785e09fb014daf755f4bca2804a, type: 3}
 --- !u!4 &2041906878 stripped

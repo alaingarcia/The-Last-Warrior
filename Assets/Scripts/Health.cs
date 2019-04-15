@@ -33,8 +33,7 @@ public class Health : MonoBehaviour
     {
         health = startingHealth;
 
-        //Get oof sound
-        deathNoise = GameObject.FindWithTag("sound").GetComponent<AudioSource>();
+        
 
         //Get mainMusic sound
         mainMusic = GameObject.FindWithTag("MainMusic").GetComponent<AudioSource>();

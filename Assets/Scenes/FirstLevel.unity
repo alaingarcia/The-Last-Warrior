@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03276151, g: 0.041265197, b: 0.05663558, a: 1}
+  m_IndirectSpecularColor: {r: 0.032761425, g: 0.041265063, b: 0.056635454, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -684,6 +684,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 1e5e5c5c3a4a94e4b89766042199aef6, type: 3}
+--- !u!82 &177623542 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3478945403117997769, guid: 94266785e09fb014daf755f4bca2804a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1632592617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &188727865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,15 +905,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
-        type: 3}
-      propertyPath: slowKey
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2184120931844521768, guid: 27fa7479b764c9a46b8f3befd5f57732,
         type: 3}
       propertyPath: newZoomLevel
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015202345312456499, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: slowKey
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fa7479b764c9a46b8f3befd5f57732, type: 3}
@@ -4437,6 +4443,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070594739184399423, guid: f5a4a78928f742449abe3bbfedd66ca1,
+        type: 3}
+      propertyPath: deathNoise
+      value: 
+      objectReference: {fileID: 177623542}
+    - target: {fileID: 8850319890836105564, guid: f5a4a78928f742449abe3bbfedd66ca1,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850319890836105564, guid: f5a4a78928f742449abe3bbfedd66ca1,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a4a78928f742449abe3bbfedd66ca1, type: 3}
