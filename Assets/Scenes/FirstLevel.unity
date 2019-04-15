@@ -904,6 +904,11 @@ PrefabInstance:
       propertyPath: slowKey
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 2184120931844521768, guid: 27fa7479b764c9a46b8f3befd5f57732,
+        type: 3}
+      propertyPath: newZoomLevel
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fa7479b764c9a46b8f3befd5f57732, type: 3}
 --- !u!1001 &228080941

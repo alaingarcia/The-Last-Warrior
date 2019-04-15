@@ -47,7 +47,7 @@ public class CameraEffects : MonoBehaviour
             playerCamera.fieldOfView = Mathf.Lerp(currentZoomLevel, newZoomLevel, Time.deltaTime * zoomSmoothing);
 
         // Return to normal zoom level if not zoomed in and current zoom is not normal zoom
-        else if (currentZoomLevel != normalZoomLevel)
+        else if (currentZoomLevel < normalZoomLevel - 5)
             playerCamera.fieldOfView = Mathf.Lerp(currentZoomLevel, normalZoomLevel, Time.deltaTime * zoomSmoothing);
     }
 }
