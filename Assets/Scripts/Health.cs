@@ -19,6 +19,11 @@ public class Health : MonoBehaviour
     Color imageColor;
     string currentLevel;
 
+    // time that the unit last took damage
+    private float lastDamageTime;
+    // time period that the unit can't damage damage again after being hit
+    public float damageTakenICD = 0.3f;
+
     //Sound
     public AudioSource deathNoise;
     public AudioSource mainMusic;
@@ -43,6 +48,8 @@ public class Health : MonoBehaviour
         }
 
         currentLevel = SceneManager.GetActiveScene().name;
+
+        lastDamageTime = Time.unscaledTime;
     }
 
     void Update()
@@ -55,7 +62,6 @@ public class Health : MonoBehaviour
             dead = true;
             if (deathNoise != null)
             {
-
                 deathNoise.Play();
             }
             if (mainMusic !=null)
@@ -95,7 +101,15 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        if (Time.unscaledTime >= lastDamageTime + damageTakenICD)
+        {
+            health -= damage;
+            lastDamageTime = Time.unscaledTime;
+        }
+        else
+        {
+            print(gameObject.name + " was hit during damage ICD");
+        }
     }
 
     public void HealthDisplay(bool showHealth)
@@ -117,9 +131,6 @@ public class Health : MonoBehaviour
 
         // Play death animation
         gameObject.GetComponent<Animator>().Play("Die");
-        
-        // First, destroy collider so that the entity sinks into the ground
-        // Destroy(gameObject.GetComponent<Collider>());
 
         // After half a second, destroy the entity
         Invoke("DestroySelf", 0.5f);
