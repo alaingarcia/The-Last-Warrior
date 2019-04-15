@@ -5,6 +5,24 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     public float damage = 25;
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        var dir = rb.velocity;
+        if (dir != Vector3.zero)
+        {
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            //transform.rotation *= Quaternion.Euler(0, 0, 180);
+        }
+
+    }
 
     void OnTriggerEnter(Collider other)
     {

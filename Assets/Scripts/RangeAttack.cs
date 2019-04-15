@@ -73,10 +73,10 @@ public class RangeAttack : MonoBehaviour
         missileBody.velocity = HitTargetAtTime(transform.position, target.position, new Vector3(0f, -9.81f, 0f), timeToHit);
         
         // Flip depending on where the missile is going
-        if (missileBody.velocity.x < 0)
+        /*if (missileBody.velocity.x < 0)
         {
             missileBody.GetComponent<SpriteRenderer>().flipX = true;
-        }
+        }*/
 
         missile.transform.forward = Vector3.Slerp(missile.transform.forward, missileBody.velocity.normalized, Time.deltaTime);
 
